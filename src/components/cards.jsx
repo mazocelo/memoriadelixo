@@ -8,11 +8,12 @@ import Img5 from './img5.jsx'
 import Img6 from './img6.jsx'
 import '../styles/styles.css'
 
-const ImgArray = [Img1,Img2,Img3,Img4,Img5,Img6]
+const ImgArray = [<Img1/>,<Img2/>,<Img3/>,<Img4/>,<Img5/>,<Img6/>]
 const Cardi = (props)=>{
   return(
-    <div onClick={reveal} class="card-img">
-    </div>
+    <div onClick={reveal} class="card">
+        {ImgArray[props.num]}
+</div>
 )}
 function reveal(e){
     e.target.classList.remove('none')
@@ -22,12 +23,12 @@ function reveal(e){
 export default function Card(props){
   return(
     <div class= "painel">
-      U
-      <Cardi><Img1/></Cardi>
-      <Cardi/>
-      <Cardi/>
-      <Cardi/>
-      <Cardi/>
+      <Cardi num='1'/>
+      <Cardi num='2'/>
+      <Cardi num='3'/>
+      <Cardi num ='4'/>
+      <Cardi num = '5/'/>
+      <Cardi num ='6'/>
     </div>
      
   )
