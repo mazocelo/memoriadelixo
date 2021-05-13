@@ -1,8 +1,9 @@
 import React from 'react'
-import Imagem from './imagem.jsx'
+import Img1 from './img1.jsx'
+import '../styles/styles.css'
 export default function Card(props){
   return(
-    <div >
+    <div className="card"><Img1/>
     </div >
   )
 }
