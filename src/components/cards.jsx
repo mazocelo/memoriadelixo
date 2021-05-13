@@ -31,8 +31,13 @@ function random(){
   var max = Math.floor(5);
   var numeroF = Math.floor(Math.random() * (max - min)) + min;
   jafoi.push(numeroF)  
+  var limite = false;
   jafoi.map((n,i)=>{
+      
+    if(n == numeroF){
+      limite = true;
     
+    }
   })
   return numeroF
 }
