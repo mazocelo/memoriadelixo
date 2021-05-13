@@ -11,22 +11,23 @@ import '../styles/styles.css'
 const ImgArray = [Img1,Img2,Img3,Img4,Img5,Img6]
 const Cardi = (props)=>{
   return(
-    <div onClick={(e)=>{console.log(e.target)}} class="card-img">
+    <div onClick={reveal} class="card-img">
     </div>
 )}
 function reveal(e){
-    e.target.innerHTML = Img1
+    e.target.classList.remove('none')
   
 }
 
 export default function Card(props){
   return(
     <div class= "painel">
-    <Cardi/>
-    <Cardi/>
-    <Cardi/>
-    <Cardi/>
-    <Cardi/>
+      U
+      <Cardi><Img1/></Cardi>
+      <Cardi/>
+      <Cardi/>
+      <Cardi/>
+      <Cardi/>
     </div>
      
   )
