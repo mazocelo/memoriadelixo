@@ -21,26 +21,34 @@ function reveal(e){
     real.classList.add('block')
     real.classList.remove('imgs')
 }
+function random(){
+  var jafoi = [] 
+  var min = Math.ceil(0);
+  var max = Math.floor(5);
+  var numeroF = Math.floor(Math.random() * (max - min)) + min;
+  jafoi.push(numeroF)  
+  return numeroF
+}
 
 export default function Card(props){
   return(
     
     <div>
       <div class= "painel">
-        <Cardi num ='1'/>
-        <Cardi num ='2'/>
-        <Cardi num ='3'/>
-        <Cardi num ='4'/>
-        <Cardi num ='5'/>
-        <Cardi num ='0'/>
+        <Cardi num ={random()}/>
+        <Cardi num ={random()}/>
+        <Cardi num ={random()}/>
+        <Cardi num ={random()}/>
+        <Cardi num ={random()}/>
+        <Cardi num ={random()}/>
       </div>
       <div class='painel'>
-        <Cardi num ='1'/>
-        <Cardi num ='2'/>
-        <Cardi num ='3'/>
-        <Cardi num ='4'/>
+        <Cardi num ={random()}/>
+        <Cardi num ={random()}/>
+        <Cardi num ={random()}/>
+        <Cardi num ={random()}/>
         <Cardi num = '5'/>
-        <Cardi num ='0'/>
+        <Cardi num ={random()}/>
       </div>
      </div>
   )
