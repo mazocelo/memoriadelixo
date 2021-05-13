@@ -16,7 +16,7 @@ const Cardi = (props)=>{
 </div>
 )}
 function reveal(e){
-    e.target.classList.remove('none')
+    e.target.classList.add('none')
   
 }
 
