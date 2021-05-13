@@ -24,6 +24,7 @@ function reveal(e){
 
 export default function Card(props){
   return(
+    
     <div>
       <div class= "painel">
         <Cardi num ='1'/>
