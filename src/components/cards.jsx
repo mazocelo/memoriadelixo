@@ -16,8 +16,10 @@ const Cardi = (props)=>{
 </div>
 )}
 function reveal(e){
-    e.target.classList.add('none')
-  
+    var real = e.target.childNodes[0]
+  console.log(real)
+    real.classList.add('block')
+  real.classList.remove(img)
 }
 
 export default function Card(props){
@@ -27,22 +29,9 @@ export default function Card(props){
       <Cardi num='2'/>
       <Cardi num='3'/>
       <Cardi num ='4'/>
-      <Cardi num = '5/'/>
-      <Cardi num ='6'/>
+      <Cardi num = '5'/>
+      <Cardi num ='0'/>
     </div>
      
   )
 }
-/*
- <Img1/>
-      <Img6/>
-      <Img1/>
-      <Img2/>
-      <Img2/>
-      <Img3/>
-      <Img3/>
-      <Img4/>
-      <Img4/>
-      <Img5/>
-      <Img5/>
-      <Img6/>*/
