@@ -1,4 +1,5 @@
-import React from 'react'
+import React, { useState } from 'react';
+
 
 import Img1 from './img1.jsx'
 import Img2 from './img2.jsx'
@@ -17,14 +18,19 @@ const Cardi = (props)=>{
 )}
 function reveal(e){
     var real = e.target.childNodes[0]
-  console.log(real)
     real.classList.add('block')
-  real.classList.remove(img)
+    real.classList.remove('imgs')
 }
 
 export default function Card(props){
   return(
     <div class= "painel">
+      <Cardi num='1'/>
+      <Cardi num='2'/>
+      <Cardi num='3'/>
+      <Cardi num ='4'/>
+      <Cardi num = '5'/>
+      <Cardi num ='0'/>
       <Cardi num='1'/>
       <Cardi num='2'/>
       <Cardi num='3'/>
