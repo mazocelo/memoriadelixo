@@ -24,20 +24,23 @@ function reveal(e){
 
 export default function Card(props){
   return(
-    <div class= "painel">
-      <Cardi num='1'/>
-      <Cardi num='2'/>
-      <Cardi num='3'/>
-      <Cardi num ='4'/>
-      <Cardi num = '5'/>
-      <Cardi num ='0'/>
-      <Cardi num='1'/>
-      <Cardi num='2'/>
-      <Cardi num='3'/>
-      <Cardi num ='4'/>
-      <Cardi num = '5'/>
-      <Cardi num ='0'/>
-    </div>
-     
+    <div>
+      <div class= "painel">
+        <Cardi num ='1'/>
+        <Cardi num ='2'/>
+        <Cardi num ='3'/>
+        <Cardi num ='4'/>
+        <Cardi num ='5'/>
+        <Cardi num ='0'/>
+      </div>
+      <div class='painel'>
+        <Cardi num ='1'/>
+        <Cardi num ='2'/>
+        <Cardi num ='3'/>
+        <Cardi num ='4'/>
+        <Cardi num = '5'/>
+        <Cardi num ='0'/>
+      </div>
+     </div>
   )
 }
