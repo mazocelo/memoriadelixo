@@ -9,23 +9,32 @@ import Img6 from './img6.jsx'
 import '../styles/styles.css'
 
 const ImgArray = [Img1,Img2,Img3,Img4,Img5,Img6]
-
+const Cardi = ()=>{
+  return(<div class="card-img">
+  </div>)
+}
+function reveal(e){
+console.log(e.target)
+  
+}
 
 export default function Card(props){
   return(
-    <div className="card">
-      <Img1/>
-      <Img6/>
-      <Img1/>
-      <Img2/>
-      <Img2/>
-      <Img3/>
-      <Img3/>
-      <Img4/>
-      <Img4/>
-      <Img5/>
-      <Img5/>
-      <Img6/>
-    </div >
+    <Cardi onclick="reveal(e)" >
+     
+    </Cardi >
   )
 }
+/*
+ <Img1/>
+      <Img6/>
+      <Img1/>
+      <Img2/>
+      <Img2/>
+      <Img3/>
+      <Img3/>
+      <Img4/>
+      <Img4/>
+      <Img5/>
+      <Img5/>
+      <Img6/>*/

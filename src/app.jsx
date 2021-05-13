@@ -11,13 +11,11 @@ import useHashLocation from "./hooks/wouter-hash";
 
 // The component that adds our Meta tags to the page
 //import Seo from './components/seo.jsx';
-import Card from './components/card.jsx'
+import Jogo from './pages/jogo.jsx'
 
 
 export default function Home() {
   return (
-    <Card value="Hello">
-      
-    </Card>
+     <Jogo/>
   );
 }
