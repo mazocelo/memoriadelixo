@@ -8,7 +8,6 @@ import Img4 from './img4.jsx'
 import Img5 from './img5.jsx'
 import Img6 from './img6.jsx'
 import '../styles/styles.css'
-
 const ImgArray = [<Img1/>,<Img2/>,<Img3/>,<Img4/>,<Img5/>,<Img6/>]
 const Cardi = (props)=>{
   return(
@@ -16,17 +15,25 @@ const Cardi = (props)=>{
         {ImgArray[props.num]}
 </div>
 )}
+
+const jafoi =[]
+
+
+
 function reveal(e){
     var real = e.target.childNodes[0]
     real.classList.add('block')
     real.classList.remove('imgs')
 }
 function random(){
-  var jafoi = [] 
+  
   var min = Math.ceil(0);
   var max = Math.floor(5);
   var numeroF = Math.floor(Math.random() * (max - min)) + min;
   jafoi.push(numeroF)  
+  jafoi.map((n,i)=>{
+    
+  })
   return numeroF
 }
 
@@ -47,7 +54,7 @@ export default function Card(props){
         <Cardi num ={random()}/>
         <Cardi num ={random()}/>
         <Cardi num ={random()}/>
-        <Cardi num = '5'/>
+        <Cardi num = {random()}/>
         <Cardi num ={random()}/>
       </div>
      </div>
