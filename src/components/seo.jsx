@@ -9,7 +9,7 @@ const Seo = () => {
   const url = SEO.url === 'glitch-default' ? window.location.hostname : SEO.url
   
   return <Helmet>
-    <title>{SEO.title}</title>
+    <title>{SEO.title}rreereeeeeeeeeeeeeeeeeeeeeee</title>
 
     <meta
       name="description"
