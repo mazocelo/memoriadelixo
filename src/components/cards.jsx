@@ -20,54 +20,54 @@ const ArrayIgual = ImgArray;
 
 const jafoi = [];
 
-
 var limite = false;
 var repetidos = [];
 const revealed = false;
 var revealed2 = false;
 
 function reveal(e) {
-  if (revealed) {
-    var image = e.target.childNodes[0];
-    console.log(image)
-    image.classList.remove("block");
-    image.classList.add("viradas");
-    revealed = false;
-  } else {
-    var image = e.target.childNodes[0];
-    image.classList.add("block");
-    image.classList.remove("viradas");
-    revealed = true;
-  }
+  var image = e.target.childNodes[0];
+  image.classList.remove("viradas");
+  image.classList.add("block");
+  revealed = true;
+}
+function unreveal(e) {
+  var image = e.target;
+  image.classList.add("viradas");
+  image.classList.remove("block");
+  revealed = false;
 }
 
-function randomico() {
+function randomico(i) {
   var min = Math.ceil(0);
   var max = Math.floor(5);
   var numeroR = Math.floor(Math.random() * (max - min)) + min;
-//  var numeroF = ArrayIgual[numeroR];
- // console.log(numeroF)
-//  ArrayIgual.splice(numeroR, 1);
-  return ImgArray[numeroR];
+  //  var numeroF = ArrayIgual[numeroR];
+  // console.log(numeroF)
+  //  ArrayIgual.splice(numeroR, 1);
+
+  return ArrayIgual[numeroR];
 }
-
-
 
 export default function Card(props) {
   return (
     <div>
       <div class="painel">
         <div>
-          {ImgArray.map((img, i) => {
-          return (
-          <div key= {i} onClick={reveal} class="card">
-            <img className="viradas imgs" src={randomico()}></img>
-          </div>)})}
-    </div>
+          {ArrayIgual.map((img, i) => {
+            return (
+              <div key={i} onClick={reveal} class="card">
+                <img
+                  className="viradas imgs"
+                  onClick={unreveal}
+                  src={randomico(i)}
+                ></img>
+              </div>
+            );
+          })}
+        </div>
       </div>
-      <div class="painel">
-       
-      </div>
+      <div class="painel"></div>
     </div>
   );
 }
