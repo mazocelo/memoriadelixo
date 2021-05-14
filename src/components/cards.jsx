@@ -15,7 +15,12 @@ const src5 =
 const src6 =
   "https://cdn.glitch.com/ee2b2e5b-f1c2-458e-83cd-dbede40e5fec%2Fluxuria%20de%20bolsonaro.png?v=1620939762682";
 
-const ImgArray = [src1, src2, src3, src4, src5, src6];
+const ImgArray = [src1, 
+                  src2, 
+                  src3,
+                  src4,
+                  src5,
+                  src6,];
 
 const jafoi = [];
 
@@ -25,7 +30,7 @@ const Cardi = props => {
       {ImgArray.map((img, i) => {
         return (
           <div onClick={reveal} class="card">
-            <img className="viradas imgs" src={img}></img>
+            <img className="viradas imgs" src={randomico()}></img>
           </div>
         );
       })}
@@ -43,12 +48,12 @@ function reveal(e) {
     var real = e.target.childNodes[0];
     real.classList.remove("block");
     real.classList.add("viradas");
-    if(revealed2){
-    //end turn
-    }else{
-      
+    if (revealed2) {
+      //end turn
+      console.log("end");
+    } else {
+      revealed2 = true;
     }
-    
   } else {
     var real = e.target.childNodes[0];
     real.classList.add("block");
@@ -61,6 +66,7 @@ function randomico() {
   var min = Math.ceil(0);
   var max = Math.floor(5);
   var numeroF = Math.floor(Math.random() * (max - min)) + min;
+  ImgArray.pop(numeroF)
   return numeroF;
 }
 
