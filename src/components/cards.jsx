@@ -23,47 +23,37 @@ const Cardi = (props)=>{
 </div>
 )}
 
-
-
+var limite = false;
+var repetidos =[]
 
 function reveal(e){
     var real = e.target.childNodes[0]
-    console.log(e.target)
     real.classList.add('block')
     real.classList.remove('imgs')
 }
-
 
 function randomico(){
   var min = Math.ceil(0);
   var max = Math.floor(5);
   var numeroF = Math.floor(Math.random() * (max - min)) + min;
-    
-  //var limite = false;
   return numeroF;
- 
-  
 }
+
 function newNumber(){
   var novoNumero = randomico()
-  var limite;
+  
   jafoi.push(novoNumero)
   console.log(jafoi)
   jafoi.map((n,i)=>{
     if(n == novoNumero){
+      while(n == novoNumero){
+      novoNumero
+      }
       
-      limite = true;
-    }
-    if(limite ==true){
-      while(n==novoNumero){
-        novoNumero = randomico();
-        console.log(n)
-      }  
     }
     
   })
-  return ImgArray[novoNumero]; 
-   
+  return ImgArray[novoNumero];
 }
 
 export default function Card(props){
