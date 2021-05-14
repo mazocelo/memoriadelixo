@@ -45,7 +45,10 @@ function Cards(props) {
   const [count, setCount] = useState(0);
   const [point, setPoint] = useState("");
   const [ArrayState, setArray] = useState(ImgArray);
-
+  const [lastElement, setLastElement] = useState('')
+  const [lastImage, setLastImage] = useState('')
+  
+  
   function randomicoNaoIgual() {
     var min = Math.ceil(0);
     var max = Math.floor(5);
@@ -76,10 +79,15 @@ function Cards(props) {
           console.log(count);
           if (count == 1) {
             if (point === image.src) {
+              div.classList.add('div-point')
+              lastElement.classList.add('div-point')
+              lastImage.classList.add("point");
               image.classList.add("point");
               setCount(0);
             }
           } else {
+            setLastElement(div)
+            setLastImage(image)
             setPoint(image.src);
           }
         }
