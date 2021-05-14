@@ -22,7 +22,7 @@ const jafoi = [];
 const Cardi = props => {
   return (
     <div onClick={reveal} class="card">
-      <img class="imgs card-img" src={newNumber()}></img>
+      <img class="viradas imgs" src={newNumber()}></img>
     </div>
   );
 };
@@ -33,7 +33,7 @@ var repetidos = [];
 function reveal(e) {
   var real = e.target.childNodes[0];
   real.classList.add("block");
-  real.classList.remove("imgs");
+  real.classList.remove("viradas");
 }
 
 function randomico() {
