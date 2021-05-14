@@ -36,12 +36,13 @@ const Cardi = props => {
 
 var limite = false;
 var repetidos = [];
-const revealed = false;
-const revealed2 = false;
+var revealed = false;
+var revealed2 = false;
 
 function reveal(e) {
   if (revealed) {
     var real = e.target.childNodes[0];
+    console.log(real)
     real.classList.remove("block");
     real.classList.add("viradas");
     if (revealed2) {
@@ -62,10 +63,10 @@ function randomico() {
   var min = Math.ceil(0);
   var max = Math.floor(5);
   var numeroR = Math.floor(Math.random() * (max - min)) + min;
-  var numeroF = ArrayIgual[numeroR];
-  console.log(numeroF)
-  ArrayIgual.splice(numeroR, 1);
-  return numeroF;
+//  var numeroF = ArrayIgual[numeroR];
+ // console.log(numeroF)
+//  ArrayIgual.splice(numeroR, 1);
+  return ImgArray[numeroR];
 }
 
 function newNumber() {
