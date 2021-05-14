@@ -27,6 +27,9 @@
   display: flex;
   flex-direction: column-reverse;
 }
+.jogo{
+
+}
 .link-img{
   display:none;  
 }

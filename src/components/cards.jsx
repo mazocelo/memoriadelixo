@@ -25,7 +25,7 @@ var repetidos = [];
 var revealed = false;
 var revealed2 = false;
 
-function Card(props) {
+function Cards(props) {
   const [count, setCount] = useState(0);
   const [novoArray, setArray] = useState(ImgArray);
 
@@ -33,49 +33,50 @@ function Card(props) {
     var min = Math.ceil(0);
     var max = Math.floor(5);
     var numeroFinal;
-    var nArr =[]
-    imgArray.map((img,i)=>{
-       var RandomN= Math.floor(Math.random() * (max - min)) + min;
-        numeroFinal = RandomN
-    })
-    
+    var nArr = [];
+    imgArray.map((img, i) => {
+      var RandomN = Math.floor(Math.random() * (max - min)) + min;
+      numeroFinal = RandomN;
+    });
+
     return ArrayIgual[numeroFinal];
   }
 
   function reveal(e) {
     let image = e.target.childNodes[0];
-    let div = e.target
+    let div = e.target;
     if (count < 2) {
       if (image) {
-        console.log(div.classList)
-        if(div.classList[0]== 'mark'){
-        
-        image.classList.remove("viradas");
-        image.classList.add("block");
-        div.classList.remove("mark")
-        setCount(count + 1);
-        
+        if (div.classList[1] == "mark") {
+          image.classList.remove("viradas");
+          image.classList.add("block");
+          div.classList.remove("mark");
+          setCount(count + 1);
         }
-      }else{
-        }
+      } else {
+      }
     }
   }
   function unreveal(e) {
     let image = e.target;
-    let div = e.target.parentNode.divImg
+    let div = e.target.parentNode;
     image.classList.add("viradas");
     image.classList.remove("block");
-    
-    div.classList.add("mark")
+    //console.log(div);
+    div.classList.add("mark");
     setCount(count - 1);
   }
 
   return (
-    <div>
-      <div className="painel">
+    <div className="painel">
         {ImgArray.map((img, i) => {
           return (
-            <div name='divImg' key={i + "d2"} onClick={reveal} className="mark card">
+            <div
+              name="divImg"
+              key={i + "d2"}
+              onClick={reveal}
+              className="card mark"
+            >
               <img
                 key={i + "img"}
                 className="viradas imgs"
@@ -86,8 +87,7 @@ function Card(props) {
           );
         })}
       </div>
-      <div className="painel"></div>
-    </div>
+      
   );
 }
-export default Card;
+export default Cards;

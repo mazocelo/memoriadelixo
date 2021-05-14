@@ -1,7 +1,11 @@
 import React from 'react'
-import Card from '../components/cards.jsx'
+import Cards from '../components/cards.jsx'
 export default function Jogo(props){
   return( 
-<Card/>
+    <div clasName='jogo'>
+      <Cards/>
+      <Cards/>
+    </div>
+    
 )
 }

@@ -16,6 +16,8 @@ import Jogo from './pages/jogo.jsx'
 
 export default function Home() {
   return (
-     <Jogo/>
+    
+    <Jogo/>
+    
   );
 }
