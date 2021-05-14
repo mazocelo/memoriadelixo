@@ -21,8 +21,9 @@ const jafoi = [];
 
 const Cardi = props => {
   return (
+    
     <div onClick={reveal} class="card">
-      <img class="viradas imgs" src={newNumber()}></img>
+      <img className="viradas imgs" src={newNumber()}></img>
     </div>
   );
 };
