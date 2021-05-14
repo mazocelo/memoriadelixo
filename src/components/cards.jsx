@@ -30,7 +30,7 @@ var revealed2 = false;
 
 function Cards(props) {
   const [count, setCount] = useState(0);
-  const [novoArray, setArray] = useState(ImgArray);
+  const [ArrayState, setArray] = useState(ImgArray);
 
   function randomicoNaoIgual(i) {
     var min = Math.ceil(0);
@@ -39,7 +39,10 @@ function Cards(props) {
     var nArr = [];
     ImgArray.map((img, i) => {
       var RandomN = Math.floor(Math.random() * (max - min)) + min;
+      nArr[i] = ImgArray[RandomN]
+      setArray(nArr[i])
       numeroFinal = RandomN;
+      console.log(ArrayState)
     });
 
     return ArrayIgual[numeroFinal];
@@ -93,7 +96,7 @@ function Cards(props) {
               key={i + "img"}
               className="viradas imgs"
               onClick={unreveal}
-              src={novoArray[i]}
+              src={ImgArray[i]}
             ></img>
           </div>
         );
