@@ -25,44 +25,51 @@ var repetidos = [];
 var revealed = false;
 var revealed2 = false;
 
-function reveal(e) {
- 
-    let image = e.target.childNodes[0];
-    if (image){
-    image.classList.remove("viradas");
-    image.classList.add("block");
-    revealed = true;
-   
-    
-  }
-}
-function unreveal(e) {
-  
-    let image = e.target;
-    image.classList.add("viradas");
-    image.classList.remove("block");
-    revealed = false;
-  
-}
-
 function randomico(i) {
   var min = Math.ceil(0);
   var max = Math.floor(5);
   var numeroR = Math.floor(Math.random() * (max - min)) + min;
   //  var numeroF = ArrayIgual[numeroR];
   // console.log(numeroF)
-  //ArrayIgual.splice(numeroR, 1);
+  seArrayIgual.splice(numeroR, 1);
   return ArrayIgual[numeroR];
 }
 
 function Card(props) {
+  
+  
+  
+  const [count, setCount] = useState(0);
+  const [novoArray, setArray] = useState(ImgArray)
+  
+  
+  
+  
+  function reveal(e) {
+    let image = e.target.childNodes[0];
+    if (count<2) {
+      
+    if (image) {
+      image.classList.remove("viradas");
+      image.classList.add("block");
+      
+      setCount(count + 1);
+    }
+      }
+  }
+  function unreveal(e) {
+    let image = e.target;
+    image.classList.add("viradas");
+    image.classList.remove("block");
+    setCount(count - 1);
+  }
+
   return (
     <div>
       <div className="painel">
         {ImgArray.map((img, i) => {
           return (
-            <div key={i + "d"} className="div-comp">
-              <div
+           <div
                 key={i + "d2"}
                 onClick={e => {
                   reveal(e);
@@ -78,15 +85,12 @@ function Card(props) {
                   src={randomico(i)}
                 ></img>
               </div>
-              <a key={i + "a"} className="link-img">
-                reveal link
-              </a>
-            </div>
+
           );
         })}
       </div>
       <div className="painel"></div>
     </div>
   );
-  mosduexport default Card;
 }
+export default Card;
