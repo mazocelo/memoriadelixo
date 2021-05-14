@@ -26,16 +26,23 @@ var revealed = false;
 var revealed2 = false;
 
 function reveal(e) {
-  var image = e.target.childNodes[0];
-  image.classList.remove("viradas");
-  image.classList.add("block");
-  revealed = true;
+ 
+    let image = e.target.childNodes[0];
+    if (image){
+    image.classList.remove("viradas");
+    image.classList.add("block");
+    revealed = true;
+   
+    
+  }
 }
 function unreveal(e) {
-  var image = e.target;
-  image.classList.add("viradas");
-  image.classList.remove("block");
-  revealed = false;
+  
+    let image = e.target;
+    image.classList.add("viradas");
+    image.classList.remove("block");
+    revealed = false;
+  
 }
 
 function randomico(i) {
@@ -48,17 +55,26 @@ function randomico(i) {
   return ArrayIgual[numeroR];
 }
 
-export default function Card(props) {
+function Card(props) {
   return (
     <div>
       <div className="painel">
         {ImgArray.map((img, i) => {
           return (
-            <div key={i+'d'} className="div-comp">
-              <div key={i+'d2'} onClick={(e)=>{reveal(e)}} className="card">
-                <img key={i+'img'}
+            <div key={i + "d"} className="div-comp">
+              <div
+                key={i + "d2"}
+                onClick={e => {
+                  reveal(e);
+                }}
+                className="card"
+              >
+                <img
+                  key={i + "img"}
                   className="viradas imgs"
-                  onClick={(e)=>{unreveal(e)}}
+                  onClick={e => {
+                    unreveal(e);
+                  }}
                   src={randomico(i)}
                 ></img>
               </div>
@@ -72,4 +88,5 @@ export default function Card(props) {
       <div className="painel"></div>
     </div>
   );
+  mosduexport default Card;
 }
