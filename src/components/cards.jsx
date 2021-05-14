@@ -20,41 +20,23 @@ const ArrayIgual = ImgArray;
 
 const jafoi = [];
 
-const Cardi = props => {
-  return (
-    <div>
-      {ImgArray.map((img, i) => {
-        return (
-          <div onClick={reveal} class="card">
-            <img className="viradas imgs" src={randomico()}></img>
-          </div>
-        );
-      })}
-    </div>
-  );
-};
 
 var limite = false;
 var repetidos = [];
-var revealed = false;
+const revealed = false;
 var revealed2 = false;
 
 function reveal(e) {
   if (revealed) {
-    var real = e.target.childNodes[0];
-    console.log(real)
-    real.classList.remove("block");
-    real.classList.add("viradas");
-    if (revealed2) {
-      //end turn
-      console.log("end");
-    } else {
-      revealed2 = true;
-    }
+    var image = e.target.childNodes[0];
+    console.log(image)
+    image.classList.remove("block");
+    image.classList.add("viradas");
+    revealed = false;
   } else {
-    var real = e.target.childNodes[0];
-    real.classList.add("block");
-    real.classList.remove("viradas");
+    var image = e.target.childNodes[0];
+    image.classList.add("block");
+    image.classList.remove("viradas");
     revealed = true;
   }
 }
@@ -69,25 +51,22 @@ function randomico() {
   return ImgArray[numeroR];
 }
 
-function newNumber() {
-  var novoNumero = randomico();
-  /*jafoi.map((n, i) => {
-    if (n == novoNumero) {
-      limite = true;
-    }
-  });*/
-  jafoi.push(novoNumero);
-  return ImgArray[novoNumero];
-}
+
 
 export default function Card(props) {
   return (
     <div>
       <div class="painel">
-        <Cardi />
+        <div>
+          {ImgArray.map((img, i) => {
+          return (
+          <div key= {i} onClick={reveal} class="card">
+            <img className="viradas imgs" src={randomico()}></img>
+          </div>)})}
+    </div>
       </div>
       <div class="painel">
-        <Cardi />
+       
       </div>
     </div>
   );
