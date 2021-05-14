@@ -43,7 +43,7 @@ var revealed2 = false;
 
 function Cards(props) {
   const [count, setCount] = useState(0);
-  const [point,setPoint] =useState('');
+  const [point, setPoint] = useState("");
   const [ArrayState, setArray] = useState(ImgArray);
 
   function randomicoNaoIgual() {
@@ -72,8 +72,16 @@ function Cards(props) {
           image.classList.add("block");
           div.classList.remove("mark");
           setCount(count + 1);
-          setPoint(image.src);
-          
+
+          console.log(count);
+          if (count == 1) {
+            if (point === image.src) {
+              image.classList.add("point");
+              setCount(0);
+            }
+          } else {
+            setPoint(image.src);
+          }
         }
       } else {
       }
@@ -82,11 +90,14 @@ function Cards(props) {
   function unreveal(e) {
     let image = e.target;
     let div = e.target.parentNode;
-    image.classList.add("viradas");
-    image.classList.remove("block");
-    //console.log(div);
-    div.classList.add("mark");
-    setCount(count - 1);
+    if (image.classList[2] == "point") {
+    } else {
+      image.classList.add("viradas");
+      image.classList.remove("block");
+      //console.log(div);
+      div.classList.add("mark");
+      setCount(count - 1);
+    }
   }
 
   return (
