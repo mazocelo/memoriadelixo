@@ -26,22 +26,17 @@ var revealed = false;
 var revealed2 = false;
 
 function reveal(e) {
-  
-  //console.log(image)
-  
-}
-function unreveal(e) {
-  if(!revealed){
-    var image = e.target;
+  var image = e.target.childNodes[0];
   image.classList.remove("viradas");
   image.classList.add("block");
   revealed = true;
-}else
-{  var image = e.target;
+}
+function unreveal(e) {
+  var image = e.target;
   image.classList.add("viradas");
   image.classList.remove("block");
   revealed = false;
-}}
+}
 
 function randomico(i) {
   var min = Math.ceil(0);
