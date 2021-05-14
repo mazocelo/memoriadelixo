@@ -55,6 +55,7 @@ export default function Card(props) {
        
           {ImgArray.map((img, i) => {
             return (
+            <div class='div-comp'>
               <div key={i} onClick={reveal} class="card">
                 <img
                   className="viradas imgs"
@@ -62,6 +63,9 @@ export default function Card(props) {
                   src={randomico(i)}
                 ></img>
               </div>
+             <a key={i}class="link-img" >reveal link</a>
+            </div>
+              
             );
           })}
        </div>
