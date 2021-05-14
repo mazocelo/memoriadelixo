@@ -25,37 +25,36 @@ var repetidos = [];
 var revealed = false;
 var revealed2 = false;
 
-function randomico(i) {
-  var min = Math.ceil(0);
-  var max = Math.floor(5);
-  var numeroR = Math.floor(Math.random() * (max - min)) + min;
-  //  var numeroF = ArrayIgual[numeroR];
-  // console.log(numeroF)
-  seArrayIgual.splice(numeroR, 1);
-  return ArrayIgual[numeroR];
-}
-
 function Card(props) {
-  
-  
-  
   const [count, setCount] = useState(0);
-  const [novoArray, setArray] = useState(ImgArray)
-  
-  
-  
-  
+  const [novoArray, setArray] = useState(ImgArray);
+
+  function randomico(i) {
+    var min = Math.ceil(0);
+    var max = Math.floor(5);
+    var numeroFinal;
+    var nArr =[]
+    imgArray.map((img,i)=>{
+       var RandomN= Math.floor(Math.random() * (max - min)) + min;
+        numeroFinal = RandomN
+    })
+    
+    return ArrayIgual[numeroFinal];
+  }
+
   function reveal(e) {
     let image = e.target.childNodes[0];
-    if (count<2) {
+    if (count < 2) {
+      if (image) {
+        image.classList.remove("viradas");
+        image.classList.add("block");
+        setCount(count + 1);
+        console.log(count)
+        
+      }else{
       
-    if (image) {
-      image.classList.remove("viradas");
-      image.classList.add("block");
-      
-      setCount(count + 1);
-    }
       }
+    }
   }
   function unreveal(e) {
     let image = e.target;
@@ -69,23 +68,14 @@ function Card(props) {
       <div className="painel">
         {ImgArray.map((img, i) => {
           return (
-           <div
-                key={i + "d2"}
-                onClick={e => {
-                  reveal(e);
-                }}
-                className="card"
-              >
-                <img
-                  key={i + "img"}
-                  className="viradas imgs"
-                  onClick={e => {
-                    unreveal(e);
-                  }}
-                  src={randomico(i)}
-                ></img>
-              </div>
-
+            <div key={i + "d2"} onClick={reveal} className="card">
+              <img
+                key={i + "img"}
+                className="viradas imgs"
+                onClick={unreveal}
+                src={novoArray[i]}
+              ></img>
+            </div>
           );
         })}
       </div>
