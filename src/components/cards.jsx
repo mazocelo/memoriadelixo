@@ -37,12 +37,13 @@ var ArrayIgual = ImgArray;
 var jafoi = [];
 
 var limite = false;
-var repetidos = [];
+
 var revealed = false;
 var revealed2 = false;
 
 function Cards(props) {
   const [count, setCount] = useState(0);
+  const [point,setPoint] =useState('');
   const [ArrayState, setArray] = useState(ImgArray);
 
   function randomicoNaoIgual() {
@@ -71,6 +72,8 @@ function Cards(props) {
           image.classList.add("block");
           div.classList.remove("mark");
           setCount(count + 1);
+          setPoint(image.src);
+          
         }
       } else {
       }
