@@ -2,7 +2,8 @@ import React, { useState } from "react";
 
 import "../styles/styles.css";
 
-const CardLogo = "https://cdn.glitch.com/ee2b2e5b-f1c2-458e-83cd-dbede40e5fec%2Flatadelixo.png?v=1621015281528"
+const CardLogo =
+  "https://cdn.glitch.com/ee2b2e5b-f1c2-458e-83cd-dbede40e5fec%2Flatadelixo.png?v=1621015281528";
 
 const src1 =
   "https://cdn.glitch.com/ee2b2e5b-f1c2-458e-83cd-dbede40e5fec%2FCapturar.PNG?v=1620938384884";
@@ -31,18 +32,27 @@ function Cards(props) {
   const [count, setCount] = useState(0);
   const [novoArray, setArray] = useState(ImgArray);
 
-  function randomico(i) {
+  function randomicoNaoIgual(i) {
     var min = Math.ceil(0);
     var max = Math.floor(5);
     var numeroFinal;
     var nArr = [];
-    imgArray.map((img, i) => {
+    ImgArray.map((img, i) => {
       var RandomN = Math.floor(Math.random() * (max - min)) + min;
       numeroFinal = RandomN;
     });
 
     return ArrayIgual[numeroFinal];
   }
+  
+  
+  
+  
+  
+  
+  
+  
+  
 
   function reveal(e) {
     let image = e.target.childNodes[0];
@@ -71,26 +81,24 @@ function Cards(props) {
 
   return (
     <div className="painel">
-        {ImgArray.map((img, i) => {
-          return (
-            <div
-              name="divImg"
-              key={i + "d2"}
-              onClick={reveal}
-              className="card mark"
-            >
-             
-              <img
-                key={i + "img"}
-                className="viradas imgs"
-                onClick={unreveal}
-                src={novoArray[i]}
-              ></img>
-            </div>
-          );
-        })}
-      </div>
-      
+      {ImgArray.map((img, i) => {
+        return (
+          <div
+            name="divImg"
+            key={i + "d2"}
+            onClick={reveal}
+            className="card mark"
+          >
+            <img
+              key={i + "img"}
+              className="viradas imgs"
+              onClick={unreveal}
+              src={novoArray[i]}
+            ></img>
+          </div>
+        );
+      })}
+    </div>
   );
 }
 export default Cards;
