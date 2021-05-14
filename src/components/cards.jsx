@@ -32,30 +32,21 @@ function Cards(props) {
   const [count, setCount] = useState(0);
   const [ArrayState, setArray] = useState(ImgArray);
 
-  function randomicoNaoIgual(i) {
+  function randomicoNaoIgual() {
     var min = Math.ceil(0);
     var max = Math.floor(5);
     var numeroFinal;
     var nArr = [];
     ImgArray.map((img, i) => {
       var RandomN = Math.floor(Math.random() * (max - min)) + min;
-      nArr[i] = ImgArray[RandomN]
-      setArray(nArr[i])
+      nArr[i] = ImgArray[RandomN];
+      setArray(nArr[i]);
       numeroFinal = RandomN;
-      console.log(ArrayState)
+      console.log(ArrayState);
     });
 
     return ArrayIgual[numeroFinal];
   }
-  
-  
-  
-  
-  
-  
-  
-  
-  
 
   function reveal(e) {
     let image = e.target.childNodes[0];
