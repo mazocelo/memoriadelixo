@@ -70,10 +70,10 @@ function Cards(props) {
     let div = e.target;
     if (count < 2) {
       if (image) {
-        if (div.classList[1] == "mark") {
+        if (div.classList[1] == "diVirada") {
           image.classList.remove("viradas");
           image.classList.add("block");
-          div.classList.remove("mark");
+          div.classList.remove("diVirada");
           setCount(count + 1);
 
           console.log(count);
@@ -84,6 +84,15 @@ function Cards(props) {
               lastImage.classList.add("point");
               image.classList.add("point");
               setCount(0);
+            }else{
+            lastElement.classList.add('diVirada')
+            lastImage.classList.add("viradas");
+            lastImage.classList.remove("block");
+            image.classList.add("viradas");
+            image.classList.remove("block");
+            div.classList.add("diVirada");
+               setCount(0);
+            
             }
           } else {
             setLastElement(div)
@@ -103,7 +112,7 @@ function Cards(props) {
       image.classList.add("viradas");
       image.classList.remove("block");
       //console.log(div);
-      div.classList.add("mark");
+      div.classList.add("diVirada");
       setCount(count - 1);
     }
   }
@@ -116,7 +125,7 @@ function Cards(props) {
             name="divImg"
             key={i + "d2"}
             onClick={reveal}
-            className="card mark"
+            className="card diVirada"
           >
             <img
               key={i + "img"}
