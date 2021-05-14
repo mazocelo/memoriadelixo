@@ -31,27 +31,24 @@ function reveal(e){
 }
 
 
-function random(){
+function randomico(){
   var min = Math.ceil(0);
   var max = Math.floor(5);
   var numeroF = Math.floor(Math.random() * (max - min)) + min;
-  jafoi.push(numeroF)  
-  var limite = false;
+  //jafoi.push(numeroF)  
+  //var limite = false;
   return numeroF;
  
   
 }
 function newNumber(){
-  var novoNumero = random()
-  var limite;
+  var novoNumero = randomico()
+  //var limite;
   console.log(novoNumero)
   jafoi.map((n,i)=>{
-  
     if(n == novoNumero){
-     limite = true;
+      //limite = true;
     }
-    
-  
   })
   return novoNumero;  
 }
@@ -61,20 +58,20 @@ export default function Card(props){
     
     <div>
       <div class= "painel">
-        <Cardi num ={newNumber()}/>
-        <Cardi num ={newNumber()}/>
-        <Cardi num ={newNumber()}/>
-        <Cardi num ={newNumber()}/>
-        <Cardi num ={newNumber()}/>
-        <Cardi num ={newNumber()}/>
+        <Cardi num ={newNumber}/>
+        <Cardi num ={newNumber}/>
+        <Cardi num ={newNumber}/>
+        <Cardi num ={newNumber}/>
+        <Cardi num ={newNumber}/>
+        <Cardi num ={newNumber}/>
       </div>
       <div class='painel'>
-        <Cardi num ={newNumber()}/>
-        <Cardi num ={newNumber()}/>
-        <Cardi num ={newNumber()}/>
-        <Cardi num ={newNumber()}/>
-        <Cardi num = {newNumber()}/>
-        <Cardi num ={newNumber()}/>
+        <Cardi num ={randomico}/>
+        <Cardi num ={randomico}/>
+        <Cardi num ={newNumber}/>
+        <Cardi num ={newNumber}/>
+        <Cardi num = {newNumber}/>
+        <Cardi num ={newNumber}/>
       </div>
      </div>
   )
