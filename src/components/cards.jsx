@@ -85,6 +85,7 @@ function Cards(props) {
               image.classList.add("point");
               setCount(0);
             }else{
+              /*
             lastElement.classList.add('diVirada')
             lastImage.classList.add("viradas");
             lastImage.classList.remove("block");
@@ -92,7 +93,7 @@ function Cards(props) {
             image.classList.remove("block");
             div.classList.add("diVirada");
                setCount(0);
-            
+            */
             }
           } else {
             setLastElement(div)
@@ -108,7 +109,8 @@ function Cards(props) {
     let image = e.target;
     let div = e.target.parentNode;
     if (image.classList[2] == "point") {
-    } else {
+    } 
+    else {
       image.classList.add("viradas");
       image.classList.remove("block");
       //console.log(div);
