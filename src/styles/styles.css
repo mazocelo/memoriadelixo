@@ -39,12 +39,12 @@
 
 @media screen and (max-width: 900px) {
   .card{
-   width: 100px;
-  height: 100px;
+   width: 140px;
+  height: 160px;
   }
   .imgs{
-  width: 65%;
-  height: 65%;
+  width: 85%;
+  height:85%;
   }
 
 }
