@@ -1,32 +1,36 @@
-.imgs{
-  width:100%;
-  height:100%;
-  padding:auto;
-  margin:auto;
-  
-  
-  }
-.viradas{
-  display:none;
+.imgs {
+  position: relative;
+  bottom:-20px;
+  width: 100%;
+  height: 100%;
+  padding: auto;
+  margin: auto;
 }
-.card{
-  padding:auto;
-  margin:auto;
-  size :100%;
-  padding:auto;
-  margin:auto;
-  width:200px;
-  height:200px;
-  border:4px solid black;
-    }
-.block{
-  display:block
+.viradas {
+  display: none;
 }
-.painel{
+.card {
+  padding: auto;
+  margin: auto;
+  size: 100%;
+  padding: auto;
+  margin: 10px;
+  width: 200px;
+  height: 200px;
+  border: 5px solid blue;
+  border-radius: 20%;
+}
+.block {
+  display: block;
+}
+.painel {
   display: flex;
-  flex-direction: row;
+  flex-direction: column-reverse;
 }
 
-@media screen and (max-width: 900px){
+@media screen and (max-width: 900px) {
+  .card{
+  
+  }
 
 }

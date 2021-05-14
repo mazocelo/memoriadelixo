@@ -44,8 +44,7 @@ function randomico(i) {
   var numeroR = Math.floor(Math.random() * (max - min)) + min;
   //  var numeroF = ArrayIgual[numeroR];
   // console.log(numeroF)
-  //  ArrayIgual.splice(numeroR, 1);
-
+  //ArrayIgual.splice(numeroR, 1);
   return ArrayIgual[numeroR];
 }
 
@@ -53,8 +52,8 @@ export default function Card(props) {
   return (
     <div>
       <div class="painel">
-        <div>
-          {ArrayIgual.map((img, i) => {
+       
+          {ImgArray.map((img, i) => {
             return (
               <div key={i} onClick={reveal} class="card">
                 <img
@@ -65,8 +64,7 @@ export default function Card(props) {
               </div>
             );
           })}
-        </div>
-      </div>
+       </div>
       <div class="painel"></div>
     </div>
   );
