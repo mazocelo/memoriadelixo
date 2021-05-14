@@ -21,20 +21,40 @@ const jafoi = [];
 
 const Cardi = props => {
   return (
-    
-    <div onClick={reveal} class="card">
-      <img className="viradas imgs" src={newNumber()}></img>
+    <div>
+      {ImgArray.map((img, i) => {
+        return (
+          <div onClick={reveal} class="card">
+            <img className="viradas imgs" src={img}></img>
+          </div>
+        );
+      })}
     </div>
   );
 };
 
 var limite = false;
 var repetidos = [];
+const revealed = false;
+const revealed2 = false;
 
 function reveal(e) {
-  var real = e.target.childNodes[0];
-  real.classList.add("block");
-  real.classList.remove("viradas");
+  if (revealed) {
+    var real = e.target.childNodes[0];
+    real.classList.remove("block");
+    real.classList.add("viradas");
+    if(revealed2){
+    //end turn
+    }else{
+      
+    }
+    
+  } else {
+    var real = e.target.childNodes[0];
+    real.classList.add("block");
+    real.classList.remove("viradas");
+    revealed = true;
+  }
 }
 
 function randomico() {
@@ -60,18 +80,8 @@ export default function Card(props) {
     <div>
       <div class="painel">
         <Cardi />
-        <Cardi />
-        <Cardi />
-        <Cardi />
-        <Cardi />
-        <Cardi />
       </div>
       <div class="painel">
-        <Cardi />
-        <Cardi />
-        <Cardi />
-        <Cardi />
-        <Cardi />
         <Cardi />
       </div>
     </div>
