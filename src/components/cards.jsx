@@ -44,22 +44,29 @@ function Card(props) {
 
   function reveal(e) {
     let image = e.target.childNodes[0];
+    let div = e.target
     if (count < 2) {
       if (image) {
+        console.log(div.classList)
+        if(div.classList[0]== 'mark'){
+        
         image.classList.remove("viradas");
         image.classList.add("block");
+        div.classList.remove("mark")
         setCount(count + 1);
-        console.log(count)
         
+        }
       }else{
-      
-      }
+        }
     }
   }
   function unreveal(e) {
     let image = e.target;
+    let div = e.target.parentNode.divImg
     image.classList.add("viradas");
     image.classList.remove("block");
+    
+    div.classList.add("mark")
     setCount(count - 1);
   }
 
@@ -68,7 +75,7 @@ function Card(props) {
       <div className="painel">
         {ImgArray.map((img, i) => {
           return (
-            <div key={i + "d2"} onClick={reveal} className="card">
+            <div name='divImg' key={i + "d2"} onClick={reveal} className="mark card">
               <img
                 key={i + "img"}
                 className="viradas imgs"
