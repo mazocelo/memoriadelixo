@@ -25,7 +25,8 @@
 }
 .painel {
   display: flex;
-  flex-direction: column-reverse;
+  flex-direction: row;
+  flex-wrap: wrap;
 }
 .jogo{
 

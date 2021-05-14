@@ -2,6 +2,8 @@ import React, { useState } from "react";
 
 import "../styles/styles.css";
 
+const CardLogo = "https://cdn.glitch.com/ee2b2e5b-f1c2-458e-83cd-dbede40e5fec%2Flatadelixo.png?v=1621015281528"
+
 const src1 =
   "https://cdn.glitch.com/ee2b2e5b-f1c2-458e-83cd-dbede40e5fec%2FCapturar.PNG?v=1620938384884";
 const src2 =
@@ -77,6 +79,7 @@ function Cards(props) {
               onClick={reveal}
               className="card mark"
             >
+             
               <img
                 key={i + "img"}
                 className="viradas imgs"
@@ -91,3 +94,10 @@ function Cards(props) {
   );
 }
 export default Cards;
+/*
+ <img 
+              ClassName="logo"
+              src={CardLogo}>
+              </img>
+
+*/
