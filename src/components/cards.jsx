@@ -19,7 +19,7 @@ const jafoi =[]
 const Cardi = (props)=>{
   return(
     <div onClick={reveal} class="card">
-        <img class="imgs card-img"src ={randomico()}></img>
+        <img class="imgs card-img"src ={newNumber()}></img>
 </div>
 )}
 
@@ -38,7 +38,7 @@ function randomico(){
   var min = Math.ceil(0);
   var max = Math.floor(5);
   var numeroF = Math.floor(Math.random() * (max - min)) + min;
-  //jafoi.push(numeroF)  
+    
   //var limite = false;
   return numeroF;
  
@@ -46,14 +46,24 @@ function randomico(){
 }
 function newNumber(){
   var novoNumero = randomico()
-  //var limite;
-  console.log(novoNumero)
+  var limite;
+  jafoi.push(novoNumero)
+  console.log(jafoi)
   jafoi.map((n,i)=>{
     if(n == novoNumero){
-      //limite = true;
+      
+      limite = true;
     }
+    if(limite ==true){
+      while(n==novoNumero){
+        novoNumero = randomico();
+        console.log(n)
+      }  
+    }
+    
   })
-  return ImgArray[novoNumero];  
+  return ImgArray[novoNumero]; 
+   
 }
 
 export default function Card(props){
