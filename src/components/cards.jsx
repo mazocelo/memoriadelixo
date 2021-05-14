@@ -1,31 +1,34 @@
 import React, { useState } from 'react';
 
 
-import Img1 from './img1.jsx'
-import Img2 from './img2.jsx'
-import Img3 from './img3.jsx'
-import Img4 from './img4.jsx'
-import Img5 from './img5.jsx'
-import Img6 from './img6.jsx'
 import '../styles/styles.css'
 
+const src1 = "https://cdn.glitch.com/ee2b2e5b-f1c2-458e-83cd-dbede40e5fec%2FCapturar.PNG?v=1620938384884"
+const src2 ="https://cdn.glitch.com/ee2b2e5b-f1c2-458e-83cd-dbede40e5fec%2FInquerito%20fk%20news.png?v=1620938407826"
+const src3 ="https://cdn.glitch.com/ee2b2e5b-f1c2-458e-83cd-dbede40e5fec%2FSem%20t%C3%ADtulo.png?v=1620938467861"
+const src4 ="https://cdn.glitch.com/ee2b2e5b-f1c2-458e-83cd-dbede40e5fec%2FPortaria%20Eleva%20Sal%C3%A1rio%20de%20bolsonaro.png?v=1620939194426"
+const src5 ="https://cdn.glitch.com/ee2b2e5b-f1c2-458e-83cd-dbede40e5fec%2FBolsonaro%20e%20Mil%C3%ADcia.png?v=1620939289084"
+const src6 ="https://cdn.glitch.com/ee2b2e5b-f1c2-458e-83cd-dbede40e5fec%2Fluxuria%20de%20bolsonaro.png?v=1620939762682"
+      
 
-const ImgArray = [<Img1/>,<Img2/>,<Img3/>,<Img4/>,<Img5/>,<Img6/>]
 
+const ImgArray = [src1,src2,src3,src4,src5,src6]
+
+const jafoi =[]
 
 const Cardi = (props)=>{
   return(
     <div onClick={reveal} class="card">
-        {ImgArray[props.num]}
+        <img class="imgs card-img"src ={randomico()}></img>
 </div>
 )}
 
-const jafoi =[]
 
 
 
 function reveal(e){
     var real = e.target.childNodes[0]
+    console.log(e.target)
     real.classList.add('block')
     real.classList.remove('imgs')
 }
@@ -50,7 +53,7 @@ function newNumber(){
       //limite = true;
     }
   })
-  return novoNumero;  
+  return ImgArray[novoNumero];  
 }
 
 export default function Card(props){
@@ -58,20 +61,20 @@ export default function Card(props){
     
     <div>
       <div class= "painel">
-        <Cardi num ={newNumber}/>
-        <Cardi num ={newNumber}/>
-        <Cardi num ={newNumber}/>
-        <Cardi num ={newNumber}/>
-        <Cardi num ={newNumber}/>
-        <Cardi num ={newNumber}/>
+        <Cardi />
+        <Cardi />
+        <Cardi />
+        <Cardi />
+        <Cardi />
+        <Cardi />
       </div>
       <div class='painel'>
-        <Cardi num ={randomico}/>
-        <Cardi num ={randomico}/>
-        <Cardi num ={newNumber}/>
-        <Cardi num ={newNumber}/>
-        <Cardi num = {newNumber}/>
-        <Cardi num ={newNumber}/>
+        <Cardi />
+        <Cardi />
+        <Cardi />
+        <Cardi />
+        <Cardi/>
+        <Cardi/>
       </div>
      </div>
   )
