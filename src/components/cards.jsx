@@ -18,7 +18,20 @@ const src5 =
 const src6 =
   "https://cdn.glitch.com/ee2b2e5b-f1c2-458e-83cd-dbede40e5fec%2Fluxuria%20de%20bolsonaro.png?v=1620939762682";
 
-var ImgArray = [src1, src2, src3, src4, src5, src6];
+var ImgArray = [
+  src1,
+  src2,
+  src3,
+  src4,
+  src5,
+  src6,
+  src1,
+  src2,
+  src3,
+  src4,
+  src5,
+  src6
+];
 var ArrayIgual = ImgArray;
 
 var jafoi = [];
