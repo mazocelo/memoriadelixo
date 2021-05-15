@@ -45,10 +45,9 @@ function Cards(props) {
   const [count, setCount] = useState(0);
   const [point, setPoint] = useState("");
   const [ArrayState, setArray] = useState(ImgArray);
-  const [lastElement, setLastElement] = useState('')
-  const [lastImage, setLastImage] = useState('')
-  
-  
+  const [lastElement, setLastElement] = useState("");
+  const [lastImage, setLastImage] = useState("");
+
   function randomicoNaoIgual() {
     var min = Math.ceil(0);
     var max = Math.floor(5);
@@ -79,12 +78,12 @@ function Cards(props) {
           console.log(count);
           if (count == 1) {
             if (point === image.src) {
-              div.classList.add('div-point')
-              lastElement.classList.add('div-point')
+              div.classList.add("div-point");
+              lastElement.classList.add("div-point");
               lastImage.classList.add("point");
               image.classList.add("point");
               setCount(0);
-            }else{
+            } else {
               /*
             lastElement.classList.add('diVirada')
             lastImage.classList.add("viradas");
@@ -96,8 +95,8 @@ function Cards(props) {
             */
             }
           } else {
-            setLastElement(div)
-            setLastImage(image)
+            setLastElement(div);
+            setLastImage(image);
             setPoint(image.src);
           }
         }
@@ -109,8 +108,7 @@ function Cards(props) {
     let image = e.target;
     let div = e.target.parentNode;
     if (image.classList[2] == "point") {
-    } 
-    else {
+    } else {
       image.classList.add("viradas");
       image.classList.remove("block");
       //console.log(div);
@@ -144,8 +142,8 @@ function Cards(props) {
 export default Cards;
 /*
  <img 
-              ClassName="logo"
-              src={CardLogo}>
-              </img>
+      ClassName="logo"
+      src={CardLogo}>
+      </img>
 
 */
