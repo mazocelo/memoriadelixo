@@ -122,6 +122,7 @@ function Cards(props) {
       {ImgArray.map((img, i) => {
         return (
           <div
+            //backgroundImage= {`url(${CardLogo})`}
             name="divImg"
             key={i + "d2"}
             onClick={reveal}
