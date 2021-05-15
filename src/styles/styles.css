@@ -44,8 +44,8 @@
    border: 8px solid green;
 }
 .diVirada{
-   background: url("https://cdn.glitch.com/ee2b2e5b-f1c2-458e-83cd-dbede40e5fec%2Flixo%20monstro.jpg?v=1621100289278") no-repeat center fixed;     
- background-position: left left; 
+   background: url("https://cdn.glitch.com/ee2b2e5b-f1c2-458e-83cd-dbede40e5fec%2Flixo%20monstro.jpg?v=1621100289278") no-repeat center;     
+ background-size:contain
   
 }
 
@@ -61,7 +61,9 @@
 
 }
 .diVirada{
+ /*
+   
  background: url("https://cdn.glitch.com/ee2b2e5b-f1c2-458e-83cd-dbede40e5fec%2Flixo%20monstro.jpg?v=1621100289278") no-repeat center fixed;     
   background-size:contain; /*cover;*/
-  
+
 }
