@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, {useState , Component } from "react";
 
 import "../styles/styles.css";
 
@@ -47,7 +47,7 @@ var Startbtn=()=> {
     return <button onClick={randomArray}>Iniciar</button>;
   }}
 */
-class Cards extends Component {
+class Cards extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -89,26 +89,26 @@ class Cards extends Component {
       arrayPassageiro.splice(RandomN, 1);
     });
     copyState.started = true;
-    this.setState(copyState);
-    return;
+  
+    return this.setState(copyState)
   }
 
   reveal(e) {
     var copyState ={};
     let image = e.target.childNodes[0];
     let div = e.target;
-    var count = this.state.count
-    if (count < 2) {
+    console.log(this.state)
+    if (this.state.count < 2) {
       if (image) {
         if (div.classList[1] == "diVirada") {
           image.classList.remove("viradas");
           image.classList.add("block");
           div.classList.remove("diVirada");
-          copyState = count + 1;
+          copyState = this.state.count + 1;
           this.setState(copyState);
 
           //console.log(count);
-          if (count == 1) {
+          if (this.state.count == 1) {
             if (this.state.point === image.src) {
               div.classList.add("div-point");
               this.state.lastElement.classList.add("div-point");
