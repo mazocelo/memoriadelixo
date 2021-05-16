@@ -47,27 +47,28 @@ var Startbtn=()=> {
     return <button onClick={randomArray}>Iniciar</button>;
   }}
 */
-export class Cards extends Component {
-  constructor(props){
-    this.state={
+class Cards extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
       count: 0,
-      point:'',
-      lastElement:'',
-      lastImage:'',
+      point: "",
+      lastElement: "",
+      lastImage: "",
       started: false,
-      min :Math.ceil(0),
-      max : Math.floor(11),
-      srcNew :"",
-      array : ImgArray,
-    }
-    this.randomArray()
-  
-  
+      min: Math.ceil(0),
+      max: Math.floor(11),
+      srcNew: "",
+      array: ImgArray
+    };
+    this.randomArray();
+    
   }
 
-
-   randomSrc() {
-    var RandomN = Math.floor(Math.random() * (this.state.max - this.state.min)) + this.state.min;
+  randomSrc() {
+    var RandomN =
+      Math.floor(Math.random() * (this.state.max - this.state.min)) +
+      this.state.min;
     //srcNew = arrayPassageiro[RandomN];
     //max--;
     //arrayPassageiro.splice(RandomN, 1);
@@ -76,44 +77,45 @@ export class Cards extends Component {
     //return srcNew;
   }
 
-   randomArray() {
-     var arrayPassageiro = ImgArray
+  randomArray() {
+    var arrayPassageiro = ImgArray;
     var copyState = this.state;
     ImgArray.forEach((img, i) => {
-      var RandomN = Math.floor(Math.random() * ((this.state.max - i)-this.state.min)) + this.state.min;
+      var RandomN =
+        Math.floor(Math.random() * (this.state.max - i - this.state.min)) +
+        this.state.min;
       copyState.array[i] = arrayPassageiro[RandomN];
       //setArray(novoArray);
       arrayPassageiro.splice(RandomN, 1);
     });
-     copyState.started = true;
+    copyState.started = true;
     this.setState(copyState);
-    return 
+    return;
   }
 
-   reveal(e) {
-     
-   
-    var copyState = this.state;
+  reveal(e) {
+    var copyState ={};
     let image = e.target.childNodes[0];
     let div = e.target;
-    if (this.state.count < 2) {
+    var count = this.state.count
+    if (count < 2) {
       if (image) {
         if (div.classList[1] == "diVirada") {
           image.classList.remove("viradas");
           image.classList.add("block");
           div.classList.remove("diVirada");
-          copyState.count = copyState.count+1
+          copyState = count + 1;
           this.setState(copyState);
 
           //console.log(count);
-          if (this.state.count == 1) {
+          if (count == 1) {
             if (this.state.point === image.src) {
               div.classList.add("div-point");
               this.state.lastElement.classList.add("div-point");
               this.state.lastImage.classList.add("point");
               image.classList.add("point");
-              
-              copyState.count = 0
+
+              copyState.count = 0;
               this.setState(copyState);
             } else {
               /*
@@ -129,15 +131,14 @@ export class Cards extends Component {
           } else {
             this.setState.lastElement(div);
             this.setState.lastImage(image);
-          this.setState.point(image.src);
+            this.setState.point(image.src);
           }
         }
       } else {
       }
     }
   }
-   unreveal(e) {
-     
+  unreveal(e) {
     var copyState = this.state;
     let image = e.target;
     let div = e.target.parentNode;
@@ -147,37 +148,34 @@ export class Cards extends Component {
       image.classList.remove("block");
       //console.log(div);
       div.classList.add("diVirada");
-      copyState.count = copyState.count-1
+      copyState.count = copyState.count - 1;
       this.setState(copyState);
     }
   }
 
-  
+  render() {
+    return (
+      <div className="painel">
+        {ImgArray.map((img, i) => {
+          return (
+            <div
+              name="divImg"
+              key={i + "d2"}
+              onClick={this.reveal}
+              className="card diVirada"
+            >
+              <img
+                key={i + "img"}
+                className="viradas imgs"
+                onClick={this.unreveal}
+                src={this.state.array[i]}
+              ></img>
+            </div>
+          );
+        })}
+      </div>
+    );
+  }
+}
 
-  render(){
-return (
-    <div className="painel">         
-       
-      {ImgArray.map((img, i) => {
-        
-          return
-          <div
-            name="divImg"
-            key={i + "d2"}
-            onClick={this.reveal}
-            className="card diVirada"
-          >
-            <img
-              key={i + "img"}
-              className="viradas imgs"
-              onClick={this.unreveal}
-              src={this.state.array[i]}
-            ></img>
-          </div>
-        
-      })
-}
-    </div>
-      )}
-  
-}
+export default Cards;
