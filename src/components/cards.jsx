@@ -161,13 +161,13 @@ class Cards extends React.Component {
             <div
               name="divImg"
               key={i + "d2"}
-              onClick={this.reveal}
+              onClick={(e)=>{this.reveal(e)}}
               className="card diVirada"
             >
               <img
                 key={i + "img"}
                 className="viradas imgs"
-                onClick={this.unreveal}
+                onClick={(e)=>{this.unreveal(e)}}
                 src={this.state.array[i]}
               ></img>
             </div>
