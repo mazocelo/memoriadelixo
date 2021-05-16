@@ -32,38 +32,34 @@ var ImgArray = [
   src5,
   src6
 ];
-const novoArrayRandom = () => {
+var srcNew = "";
+var arrayPassageiro = ImgArray;
+function randomSrc() {
   var min = Math.ceil(0);
   var max = Math.floor(5);
-  var numeroFinal;
-  var ArrayN = [];
-  var arrayPassageiro = ImgArray;
-  ImgArray.map((img, i) => {
-    var RandomN = Math.floor(Math.random() * (max - i - min)) + min;
-    console.log(RandomN);
-    ArrayN[i] = ImgArray[RandomN];
+  var i = arrayPassageiro.length
+  var RandomN = Math.floor(Math.random() * (max - i - min)) + min;
+  console.log(RandomN);
+  srcNew = arrayPassageiro[RandomN];
 
-    arrayPassageiro.splice(RandomN, 1);
+  arrayPassageiro.splice(RandomN, 1);
 
-    numeroFinal = RandomN;
-  });
+  return srcNew;
+}
 
-  var jafoi = [];
+var jafoi = [];
 
-  var limite = false;
+var limite = false;
 
-  var revealed = false;
-  var revealed2 = false;
+var revealed = false;
+var revealed2 = false;
 
-  function Cards(props) {
-    const [count, setCount] = useState(0);
-    const [point, setPoint] = useState("");
-    const [ArrayState, setArray] = useState(ImgArray);
-    const [lastElement, setLastElement] = useState("");
-    const [lastImage, setLastImage] = useState("");
-
-    return ArrayN;
-  }
+function Cards(props) {
+  const [count, setCount] = useState(0);
+  const [point, setPoint] = useState("");
+  const [ArrayState, setArray] = useState(ImgArray);
+  const [lastElement, setLastElement] = useState("");
+  const [lastImage, setLastImage] = useState("");
 
   function reveal(e) {
     let image = e.target.childNodes[0];
@@ -143,14 +139,14 @@ const novoArrayRandom = () => {
               key={i + "img"}
               className="viradas imgs"
               onClick={unreveal}
-              src={novoArrayRandom[i]}
+              src={randomSrc}
             ></img>
           </div>
         );
       })}
     </div>
   );
-};
+}
 export default Cards;
 /*
  <img 
