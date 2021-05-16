@@ -51,19 +51,19 @@ function Cards(props) {
     var min = Math.ceil(0);
     var max = Math.floor(5);
     var numeroFinal;
-    var NovoArrayRandom = [];
+    var novoArrayRandom = [];
     ImgArray.map((img, i) => {
       var RandomN = Math.floor(Math.random() * (max - min-i)) + min-i;
-      NovoArrayRandom[i] = ArrayState[RandomN];
+      novoArrayRandom[i] = ArrayState[RandomN];
       
       let arrayPassageiro = ArrayState
-      arrayPassa
-      setArray()
+      arrayPassageiro.splice(RandomN,1)
+      setArray(arrayPassageiro);
       numeroFinal = RandomN;
-      console.log(nArr);
+      console.log(novoArrayRandom);
     });
 
-    return setArray(nArr);;
+    return setArray(novoArrayRandom);;
   }
 
   function reveal(e) {
@@ -118,14 +118,31 @@ function Cards(props) {
       setCount(count - 1);
     }
   }
-
+            //backgroundImage= {`url(${CardLogo})`}
+    var min = Math.ceil(0);
+    var max = Math.floor(5);
+    var numeroFinal;
+    var novoArrayRandom = [];
+   var arrayPassageiro = ArrayState
   return (
+
+    
     <div className="painel">
-      {ArrayState.map((img, i) => {
+      {
+        ImgArray.map((img, i) => {
+      var RandomN = Math.floor(Math.random() * (max - min-i)) + min-i;
+      novoArrayRandom[i] = ArrayState[RandomN];
+      
+     
+      arrayPassageiro.splice(RandomN,1)
+      setArray(arrayPassageiro);
+      numeroFinal = RandomN;
+      console.log(novoArrayRandom);
+                   
+          
         return (
           <div
-            //backgroundImage= {`url(${CardLogo})`}
-            name="divImg"
+           name="divImg"
             key={i + "d2"}
             onClick={reveal}
             className="card diVirada"
