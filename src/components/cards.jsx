@@ -1,4 +1,4 @@
-import React, {useState , Component } from "react";
+import React, { useState, Component } from "react";
 
 import "../styles/styles.css";
 
@@ -62,7 +62,6 @@ class Cards extends React.Component {
       array: ImgArray
     };
     this.randomArray();
-    
   }
 
   randomSrc() {
@@ -89,15 +88,15 @@ class Cards extends React.Component {
       arrayPassageiro.splice(RandomN, 1);
     });
     copyState.started = true;
-  
-    return this.setState(copyState)
+    this.setState(copyState);
+    return this.state;
   }
 
   reveal(e) {
-    var copyState ={};
+    var copyState = {};
     let image = e.target.childNodes[0];
     let div = e.target;
-    console.log(this.state)
+    console.log(this.state);
     if (this.state.count < 2) {
       if (image) {
         if (div.classList[1] == "diVirada") {
@@ -156,19 +155,23 @@ class Cards extends React.Component {
   render() {
     return (
       <div className="painel">
-        {ImgArray.map((img, i) => {
+        {this.state.array.map((img, i) => {
           return (
             <div
               name="divImg"
               key={i + "d2"}
-              onClick={(e)=>{this.reveal(e)}}
+              onClick={e => {
+                this.reveal(e);
+              }}
               className="card diVirada"
             >
               <img
                 key={i + "img"}
                 className="viradas imgs"
-                onClick={(e)=>{this.unreveal(e)}}
-                src={this.state.array[i]}
+                onClick={e => {
+                  this.unreveal(e);
+                }}
+                src={img}
               ></img>
             </div>
           );
