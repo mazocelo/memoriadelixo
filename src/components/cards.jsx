@@ -51,7 +51,6 @@ function Cards(props) {
   var max = Math.floor(11);
 
   var srcNew = "";
-  var i = 0;
   var arrayPassageiro = ImgArray;
 
   function randomSrc() {
@@ -69,11 +68,11 @@ function Cards(props) {
     ImgArray.forEach((img, i) => {
       var RandomN = Math.floor(Math.random() * (max - i - min)) + min;
       novoArray[i] = arrayPassageiro[RandomN];
-      setArray(novoArray);
+      //setArray(novoArray);
       arrayPassageiro.splice(RandomN, 1);
     });
     setStart(true);
-    return;
+    return setArray(novoArray);;
   }
 
   function reveal(e) {
@@ -131,16 +130,17 @@ function Cards(props) {
 
   var Startbtn=()=> {
     if(started){
+      return <h2>bomjogo</h2>
     }else{
-    return <button onclick={randomArray}>Iniciar</button>;
+    return <button onClick={randomArray}>Iniciar</button>;
   }}
 
   return (
     <div className="painel">
       
      
-         <Startbtn/>
-      
+        { //<Startbtn/>
+      }
       {ImgArray.map((img, i) => {
         return (
           <div
