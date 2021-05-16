@@ -46,30 +46,24 @@ function Cards(props) {
   const [ArrayState, setArray] = useState(ImgArray);
   const [lastElement, setLastElement] = useState("");
   const [lastImage, setLastImage] = useState("");
- var min = Math.ceil(0);
+  var min = Math.ceil(0);
   var max = Math.floor(11);
-  
-var srcNew = "";
- var i =0
-var arrayPassageiro = ImgArray;
-  
-  function randomSrc() {
- 
-   ArrayState.map((img,i)=>{
-    var RandomN = Math.floor(Math.random() * (max-i  - min)) + min;
-    arrayPassageiro[i] = ImgArray[RandomN]
-    
-  ImgArray.splice(RandomN, 1);
-  })
-  //console.log(RandomN);
-  console.log(srcNew)
-  return arrayPassageiro;
-}
 
-  
-  
-  
-  
+  var srcNew = "";
+  var i = 0;
+  var arrayPassageiro = ImgArray;
+
+  function randomSrc() {
+    var RandomN = Math.floor(Math.random() * (max - min)) + min;
+    srcNew = ImgArray[RandomN];
+    max--
+    ImgArray.splice(RandomN, 1);
+
+    //console.log(RandomN);
+    console.log(ImgArray);
+    return srcNew;
+  }
+
   function reveal(e) {
     let image = e.target.childNodes[0];
     let div = e.target;
@@ -126,7 +120,7 @@ var arrayPassageiro = ImgArray;
     <div className="painel">
       {ImgArray.map((img, i) => {
         // randomi(i)
-        var source = randomSrc()
+        var rand =
         return (
           <div
             name="divImg"
@@ -138,7 +132,7 @@ var arrayPassageiro = ImgArray;
               key={i + "img"}
               className="viradas imgs"
               onClick={unreveal}
-              src={source[i]}
+              src={randomSrc}
             ></img>
           </div>
         );
