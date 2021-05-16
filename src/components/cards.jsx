@@ -54,12 +54,13 @@ export class Cards extends Component {
       point:'',
       lastElement:'',
       lastImage:'',
-      started:false,
+      started: false,
       min :Math.ceil(0),
       max : Math.floor(11),
       srcNew :"",
-      arrayPassageiro : ImgArray,
+      array : ImgArray,
     }
+    this.randomArray()
   
   
   }
@@ -76,18 +77,23 @@ export class Cards extends Component {
   }
 
    randomArray() {
-    var novoArray = [];
+     var arrayPassageiro = ImgArray
+    var copyState = this.state;
     ImgArray.forEach((img, i) => {
-      var RandomN = Math.floor(Math.random() * (max - i - min)) + min;
-      novoArray[i] = arrayPassageiro[RandomN];
+      var RandomN = Math.floor(Math.random() * ((this.state.max - i)-this.state.min)) + this.state.min;
+      copyState.array[i] = arrayPassageiro[RandomN];
       //setArray(novoArray);
       arrayPassageiro.splice(RandomN, 1);
     });
-    setStart(true);
-    return setArray(novoArray);;
+     copyState.started = true;
+    this.setState(copyState);
+    return 
   }
 
    reveal(e) {
+     
+   
+    var copyState = this.state;
     let image = e.target.childNodes[0];
     let div = e.target;
     if (this.state.count < 2) {
@@ -96,16 +102,19 @@ export class Cards extends Component {
           image.classList.remove("viradas");
           image.classList.add("block");
           div.classList.remove("diVirada");
-          setCount(count + 1);
+          copyState.count = copyState.count+1
+          this.setState(copyState);
 
           //console.log(count);
           if (this.state.count == 1) {
             if (this.state.point === image.src) {
               div.classList.add("div-point");
               this.state.lastElement.classList.add("div-point");
-              lastImage.classList.add("point");
+              this.state.lastImage.classList.add("point");
               image.classList.add("point");
-              setCount(0);
+              
+              copyState.count = 0
+              this.setState(copyState);
             } else {
               /*
             lastElement.classList.add('diVirada')
@@ -128,6 +137,8 @@ export class Cards extends Component {
     }
   }
    unreveal(e) {
+     
+    var copyState = this.state;
     let image = e.target;
     let div = e.target.parentNode;
     if (image.classList[2] == "point") {
@@ -136,7 +147,8 @@ export class Cards extends Component {
       image.classList.remove("block");
       //console.log(div);
       div.classList.add("diVirada");
-      setCount(this.count - 1);
+      copyState.count = copyState.count-1
+      this.setState(copyState);
     }
   }
 
