@@ -39,21 +39,33 @@ var limite = false;
 
 var revealed = false;
 var revealed2 = false;
+var Startbtn=()=> {
+    if(started){
+      return <h2>bomjogo</h2>
+    }else{
+    return <button onClick={randomArray}>Iniciar</button>;
+  }}
 
-function Cards(props) {
-  const [count, setCount] = useState(0);
-  const [point, setPoint] = useState("");
-  const [ArrayState, setArray] = useState(ImgArray);
-  const [lastElement, setLastElement] = useState("");
-  const [lastImage, setLastImage] = useState("");
-  const [started,setStart]=useState(false)
-  var min = Math.ceil(0);
-  var max = Math.floor(11);
+export class Cards extends Component {
+  constructor(props){
+  
+    const [count, setCount] = useState(0);
+    const [point, setPoint] = useState("");
+    const [ArrayState, setArray] = useState(ImgArray);
+    const [lastElement, setLastElement] = useState("");
+    const [lastImage, setLastImage] = useState("");
+    const [started,setStart]=useState(false)
+    const min = Math.ceil(0);
+    var max = Math.floor(11);
+    var srcNew = "";
+    var arrayPassageiro = ImgArray;
+  
+  
+  
+  }
 
-  var srcNew = "";
-  var arrayPassageiro = ImgArray;
 
-  function randomSrc() {
+   randomSrc() {
     var RandomN = Math.floor(Math.random() * (max - min)) + min;
     srcNew = arrayPassageiro[RandomN];
     max--;
@@ -63,7 +75,7 @@ function Cards(props) {
     return srcNew;
   }
 
-  function randomArray() {
+   randomArray() {
     var novoArray = [];
     ImgArray.forEach((img, i) => {
       var RandomN = Math.floor(Math.random() * (max - i - min)) + min;
@@ -75,7 +87,7 @@ function Cards(props) {
     return setArray(novoArray);;
   }
 
-  function reveal(e) {
+   reveal(e) {
     let image = e.target.childNodes[0];
     let div = e.target;
     if (count < 2) {
@@ -115,7 +127,7 @@ function Cards(props) {
       }
     }
   }
-  function unreveal(e) {
+   unreveal(e) {
     let image = e.target;
     let div = e.target.parentNode;
     if (image.classList[2] == "point") {
@@ -128,21 +140,15 @@ function Cards(props) {
     }
   }
 
-  var Startbtn=()=> {
-    if(started){
-      return <h2>bomjogo</h2>
-    }else{
-    return <button onClick={randomArray}>Iniciar</button>;
-  }}
+  
 
-  return (
-    <div className="painel">
-      
-     
-        { //<Startbtn/>
-      }
+  render(){
+return (
+    <div className="painel">         
+       
       {ImgArray.map((img, i) => {
-        return (
+        
+          return
           <div
             name="divImg"
             key={i + "d2"}
@@ -156,16 +162,10 @@ function Cards(props) {
               src={ArrayState[i]}
             ></img>
           </div>
-        );
-      })}
-    </div>
-  );
+        
+      })
 }
-export default Cards;
-/*
- <img 
-      ClassName="logo"
-      src={CardLogo}>
-      </img>
-
-*/
+    </div>
+      )}
+  
+}
