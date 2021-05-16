@@ -55,12 +55,24 @@ function Cards(props) {
 
   function randomSrc() {
     var RandomN = Math.floor(Math.random() * (max - min)) + min;
-    srcNew = arrayPassageiro[RandomN]
-    max--
+    srcNew = arrayPassageiro[RandomN];
+    max--;
     arrayPassageiro.splice(RandomN, 1);
-      //console.log(RandomN);
+    //console.log(RandomN);
     console.log(arrayPassageiro);
     return srcNew;
+  }
+
+  function randomArray() {
+    var novoArray=[]
+    ImgArray.forEach((img, i) => {
+      var RandomN = Math.floor(Math.random() * (max - i - min)) + min;
+      novoArray[i]=  arrayPassageiro[RandomN]
+      setArray(novoArray);
+       arrayPassageiro.splice(RandomN, 1);
+    
+    });
+    return
   }
 
   function reveal(e) {
@@ -115,10 +127,20 @@ function Cards(props) {
       setCount(count - 1);
     }
   }
+  
+  function startbtn(){
+    return(
+  <button onclick ={randomArray}>Iniciar</button>
+    )
+    }
+  
+  
+  
   return (
     <div className="painel">
-      {ImgArray.map((img, i) => {
-        
+      {}
+      {
+        ImgArray.map((img, i) => {
         return (
           <div
             name="divImg"
@@ -130,7 +152,7 @@ function Cards(props) {
               key={i + "img"}
               className="viradas imgs"
               onClick={unreveal}
-              src={randomSrc}
+              src={ArrayState[i]}
             ></img>
           </div>
         );
