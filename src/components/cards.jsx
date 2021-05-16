@@ -54,7 +54,7 @@ function Cards(props) {
     var novoArrayRandom = [];
     ImgArray.map((img, i) => {
       var RandomN = Math.floor(Math.random() * (max - min-i)) + min-i;
-      novoArrayRandom[i] = ArrayState[RandomN];
+      novoArrayRandom.push(ArrayState[RandomN]);
       
       let arrayPassageiro = ArrayState
       arrayPassageiro.splice(RandomN,1)
@@ -124,20 +124,24 @@ function Cards(props) {
     var numeroFinal;
     var novoArrayRandom = [];
    var arrayPassageiro = ArrayState
-  return (
-
-    
-    <div className="painel">
-      {
-        ImgArray.map((img, i) => {
-      var RandomN = Math.floor(Math.random() * (max - min-i)) + min-i;
-      novoArrayRandom[i] = ArrayState[RandomN];
+  function randomi(i){
+     //  var RandomN = Math.floor(Math.random() * (max - min-i)) + min-i;
+     // novoArrayRandom[i] = ArrayState[RandomN];
       
      
-      arrayPassageiro.splice(RandomN,1)
-      setArray(arrayPassageiro);
-      numeroFinal = RandomN;
-      console.log(novoArrayRandom);
+  //    arrayPassageiro.splice(i,1)
+      //setArray(arrayPassageiro);
+    //  numeroFinal = RandomN;
+    //  console.log(arrayPassageiro);
+  }
+  return (
+
+    <div className="painel">
+
+    {randomico()}
+      { 
+        ImgArray.map((img, i) => {
+        // randomi(i)
                    
           
         return (
