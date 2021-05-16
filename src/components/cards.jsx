@@ -55,12 +55,11 @@ function Cards(props) {
 
   function randomSrc() {
     var RandomN = Math.floor(Math.random() * (max - min)) + min;
-    srcNew = ImgArray[RandomN];
+    srcNew = arrayPassageiro[RandomN]
     max--
-    ImgArray.splice(RandomN, 1);
-
-    //console.log(RandomN);
-    console.log(ImgArray);
+    arrayPassageiro.splice(RandomN, 1);
+      //console.log(RandomN);
+    console.log(arrayPassageiro);
     return srcNew;
   }
 
@@ -119,8 +118,7 @@ function Cards(props) {
   return (
     <div className="painel">
       {ImgArray.map((img, i) => {
-        // randomi(i)
-        var rand =
+        
         return (
           <div
             name="divImg"
