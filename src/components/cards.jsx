@@ -33,19 +33,8 @@ var ImgArray = [
   src6
 ];
 var srcNew = "";
+ var i =0
 var arrayPassageiro = ImgArray;
-function randomSrc() {
-  var min = Math.ceil(0);
-  var max = Math.floor(5);
-  var i = arrayPassageiro.length
-  var RandomN = Math.floor(Math.random() * (max - i - min)) + min;
-  console.log(RandomN);
-  srcNew = arrayPassageiro[RandomN];
-
-  arrayPassageiro.splice(RandomN, 1);
-
-  return srcNew;
-}
 
 var jafoi = [];
 
@@ -60,7 +49,25 @@ function Cards(props) {
   const [ArrayState, setArray] = useState(ImgArray);
   const [lastElement, setLastElement] = useState("");
   const [lastImage, setLastImage] = useState("");
+ var min = Math.ceil(0);
+  var max = Math.floor(5);
+  function randomSrc() {
+ 
+ 
+  var RandomN = Math.floor(Math.random() * (max  - min)) + min;
+  console.log(RandomN);
+  srcNew = ImgArray[RandomN];
+  console.log(srcNew)
+  ImgArray.splice(RandomN, 1);
+    setArray(ImgArray)
+   max--
+  return srcNew;
+}
 
+  
+  
+  
+  
   function reveal(e) {
     let image = e.target.childNodes[0];
     let div = e.target;
@@ -139,7 +146,7 @@ function Cards(props) {
               key={i + "img"}
               className="viradas imgs"
               onClick={unreveal}
-              src={randomSrc}
+              src={randomSrc()}
             ></img>
           </div>
         );
