@@ -32,7 +32,6 @@ var ImgArray = [
   src5,
   src6
 ];
-var ArrayIgual = ImgArray;
 
 var jafoi = [];
 
@@ -48,20 +47,23 @@ function Cards(props) {
   const [lastElement, setLastElement] = useState("");
   const [lastImage, setLastImage] = useState("");
 
-  function randomicoNaoIgual() {
+  function randomico() {
     var min = Math.ceil(0);
     var max = Math.floor(5);
     var numeroFinal;
-    var nArr = [];
+    var NovoArrayRandom = [];
     ImgArray.map((img, i) => {
-      var RandomN = Math.floor(Math.random() * (max - min)) + min;
-      nArr[i] = ImgArray[RandomN];
-      setArray(nArr[i]);
+      var RandomN = Math.floor(Math.random() * (max - min-i)) + min-i;
+      NovoArrayRandom[i] = ArrayState[RandomN];
+      
+      let arrayPassageiro = ArrayState
+      arrayPassa
+      setArray()
       numeroFinal = RandomN;
-      console.log(ArrayState);
+      console.log(nArr);
     });
 
-    return ArrayIgual[numeroFinal];
+    return setArray(nArr);;
   }
 
   function reveal(e) {
@@ -119,7 +121,7 @@ function Cards(props) {
 
   return (
     <div className="painel">
-      {ImgArray.map((img, i) => {
+      {ArrayState.map((img, i) => {
         return (
           <div
             //backgroundImage= {`url(${CardLogo})`}
@@ -132,7 +134,7 @@ function Cards(props) {
               key={i + "img"}
               className="viradas imgs"
               onClick={unreveal}
-              src={ImgArray[i]}
+              src={ArrayState[i]}
             ></img>
           </div>
         );
