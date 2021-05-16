@@ -46,6 +46,7 @@ function Cards(props) {
   const [ArrayState, setArray] = useState(ImgArray);
   const [lastElement, setLastElement] = useState("");
   const [lastImage, setLastImage] = useState("");
+  const [started,setStart]=useState(false)
   var min = Math.ceil(0);
   var max = Math.floor(11);
 
@@ -64,15 +65,15 @@ function Cards(props) {
   }
 
   function randomArray() {
-    var novoArray=[]
+    var novoArray = [];
     ImgArray.forEach((img, i) => {
       var RandomN = Math.floor(Math.random() * (max - i - min)) + min;
-      novoArray[i]=  arrayPassageiro[RandomN]
+      novoArray[i] = arrayPassageiro[RandomN];
       setArray(novoArray);
-       arrayPassageiro.splice(RandomN, 1);
-    
+      arrayPassageiro.splice(RandomN, 1);
     });
-    return
+    setStart(true);
+    return;
   }
 
   function reveal(e) {
@@ -127,20 +128,20 @@ function Cards(props) {
       setCount(count - 1);
     }
   }
-  
-  function startbtn(){
-    return(
-  <button onclick ={randomArray}>Iniciar</button>
-    )
-    }
-  
-  
-  
+
+  var Startbtn=()=> {
+    if(started){
+    }else{
+    return <button onclick={randomArray}>Iniciar</button>;
+  }}
+
   return (
     <div className="painel">
-      {}
-      {
-        ImgArray.map((img, i) => {
+      
+     
+         <Startbtn/>
+      
+      {ImgArray.map((img, i) => {
         return (
           <div
             name="divImg"
