@@ -52,18 +52,18 @@ function Cards(props) {
     var max = Math.floor(5);
     var numeroFinal;
     var novoArrayRandom = [];
+    var arrayPassageiro = ArrayState
     ImgArray.map((img, i) => {
       var RandomN = Math.floor(Math.random() * (max - min-i)) + min-i;
-      novoArrayRandom.push(ArrayState[RandomN]);
-      
-      let arrayPassageiro = ArrayState
+      novoArrayRandom[i] = ArrayState[RandomN];
+         
       arrayPassageiro.splice(RandomN,1)
-      setArray(arrayPassageiro);
+      //setArray(arrayPassageiro);
       numeroFinal = RandomN;
       console.log(novoArrayRandom);
     });
-
-    return setArray(novoArrayRandom);;
+//setArray(novoArrayRandom);
+    return;
   }
 
   function reveal(e) {
@@ -119,11 +119,7 @@ function Cards(props) {
     }
   }
             //backgroundImage= {`url(${CardLogo})`}
-    var min = Math.ceil(0);
-    var max = Math.floor(5);
-    var numeroFinal;
-    var novoArrayRandom = [];
-   var arrayPassageiro = ArrayState
+  
   function randomi(i){
      //  var RandomN = Math.floor(Math.random() * (max - min-i)) + min-i;
      // novoArrayRandom[i] = ArrayState[RandomN];
@@ -135,10 +131,10 @@ function Cards(props) {
     //  console.log(arrayPassageiro);
   }
   return (
-
+    
     <div className="painel">
-
-    {randomico()}
+      {randomico()}
+    
       { 
         ImgArray.map((img, i) => {
         // randomi(i)
