@@ -55,16 +55,15 @@ var arrayPassageiro = ImgArray;
   
   function randomSrc() {
  
- 
-  var RandomN = Math.floor(Math.random() * (max  - min)) + min;
-  console.log(RandomN);
-  //srcNew = ArrayState[RandomN];
-  srcNew = ImgArray[RandomN]
-    console.log(srcNew)
+   ArrayState.map((img,i)=>{
+    var RandomN = Math.floor(Math.random() * (max-i  - min)) + min;
+    arrayPassageiro[i] = ImgArray[RandomN]
+    
   ImgArray.splice(RandomN, 1);
-   // setArray(ImgArray)
-   max--
-  return srcNew;
+  })
+  //console.log(RandomN);
+  console.log(srcNew)
+  return arrayPassageiro;
 }
 
   
@@ -127,7 +126,7 @@ var arrayPassageiro = ImgArray;
     <div className="painel">
       {ImgArray.map((img, i) => {
         // randomi(i)
-        var source = randomSrc
+        var source = randomSrc()
         return (
           <div
             name="divImg"
@@ -139,7 +138,7 @@ var arrayPassageiro = ImgArray;
               key={i + "img"}
               className="viradas imgs"
               onClick={unreveal}
-              src={source}
+              src={source[i]}
             ></img>
           </div>
         );
