@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { Component } from "react";
 
 import "../styles/styles.css";
 
@@ -39,40 +39,40 @@ var limite = false;
 
 var revealed = false;
 var revealed2 = false;
+/*
 var Startbtn=()=> {
     if(started){
       return <h2>bomjogo</h2>
     }else{
     return <button onClick={randomArray}>Iniciar</button>;
   }}
-
+*/
 export class Cards extends Component {
   constructor(props){
-  
-    const [count, setCount] = useState(0);
-    const [point, setPoint] = useState("");
-    const [ArrayState, setArray] = useState(ImgArray);
-    const [lastElement, setLastElement] = useState("");
-    const [lastImage, setLastImage] = useState("");
-    const [started,setStart]=useState(false)
-    const min = Math.ceil(0);
-    var max = Math.floor(11);
-    var srcNew = "";
-    var arrayPassageiro = ImgArray;
-  
+    this.state={
+      count: 0,
+      point:'',
+      lastElement:'',
+      lastImage:'',
+      started:false,
+      min :Math.ceil(0),
+      max : Math.floor(11),
+      srcNew :"",
+      arrayPassageiro : ImgArray,
+    }
   
   
   }
 
 
    randomSrc() {
-    var RandomN = Math.floor(Math.random() * (max - min)) + min;
-    srcNew = arrayPassageiro[RandomN];
-    max--;
-    arrayPassageiro.splice(RandomN, 1);
+    var RandomN = Math.floor(Math.random() * (this.state.max - this.state.min)) + this.state.min;
+    //srcNew = arrayPassageiro[RandomN];
+    //max--;
+    //arrayPassageiro.splice(RandomN, 1);
     //console.log(RandomN);
-    console.log(arrayPassageiro);
-    return srcNew;
+    //console.log(arrayPassageiro);
+    //return srcNew;
   }
 
    randomArray() {
@@ -90,7 +90,7 @@ export class Cards extends Component {
    reveal(e) {
     let image = e.target.childNodes[0];
     let div = e.target;
-    if (count < 2) {
+    if (this.state.count < 2) {
       if (image) {
         if (div.classList[1] == "diVirada") {
           image.classList.remove("viradas");
@@ -98,11 +98,11 @@ export class Cards extends Component {
           div.classList.remove("diVirada");
           setCount(count + 1);
 
-          console.log(count);
-          if (count == 1) {
-            if (point === image.src) {
+          //console.log(count);
+          if (this.state.count == 1) {
+            if (this.state.point === image.src) {
               div.classList.add("div-point");
-              lastElement.classList.add("div-point");
+              this.state.lastElement.classList.add("div-point");
               lastImage.classList.add("point");
               image.classList.add("point");
               setCount(0);
@@ -118,9 +118,9 @@ export class Cards extends Component {
             */
             }
           } else {
-            setLastElement(div);
-            setLastImage(image);
-            setPoint(image.src);
+            this.setState.lastElement(div);
+            this.setState.lastImage(image);
+          this.setState.point(image.src);
           }
         }
       } else {
@@ -136,7 +136,7 @@ export class Cards extends Component {
       image.classList.remove("block");
       //console.log(div);
       div.classList.add("diVirada");
-      setCount(count - 1);
+      setCount(this.count - 1);
     }
   }
 
@@ -152,14 +152,14 @@ return (
           <div
             name="divImg"
             key={i + "d2"}
-            onClick={reveal}
+            onClick={this.reveal}
             className="card diVirada"
           >
             <img
               key={i + "img"}
               className="viradas imgs"
-              onClick={unreveal}
-              src={ArrayState[i]}
+              onClick={this.unreveal}
+              src={this.state.array[i]}
             ></img>
           </div>
         
