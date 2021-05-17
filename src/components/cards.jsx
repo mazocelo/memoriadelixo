@@ -1,4 +1,4 @@
-import React, { useState, Component } from "react";
+import React, {  Component } from "react";
 
 import "../styles/styles.css";
 
@@ -47,7 +47,7 @@ var Startbtn=()=> {
     return <button onClick={randomArray}>Iniciar</button>;
   }}
 */
-class Cards extends React.Component {
+class Cards extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -59,8 +59,9 @@ class Cards extends React.Component {
       min: Math.ceil(0),
       max: Math.floor(11),
       srcNew: "",
-      array: this.randomArray()
+      
     };
+   // this.array= this.randomArray()
   }
 
   randomSrc() {
@@ -154,7 +155,11 @@ class Cards extends React.Component {
   render() {
     return (
       <div className="painel">
-        {ImgArray.map((img, i) => {
+        {
+          this.state
+            
+          
+          /*ImgArray.map((img, i) => {
           return (
             <div
               name="divImg"
@@ -174,7 +179,7 @@ class Cards extends React.Component {
               ></img>
             </div>
           );
-        })}
+        })*/}
       </div>
     );
   }
