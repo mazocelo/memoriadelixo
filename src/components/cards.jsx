@@ -59,9 +59,8 @@ class Cards extends React.Component {
       min: Math.ceil(0),
       max: Math.floor(11),
       srcNew: "",
-      array: ImgArray
+      array: this.randomArray()
     };
-    this.randomArray();
   }
 
   randomSrc() {
@@ -78,18 +77,18 @@ class Cards extends React.Component {
 
   randomArray() {
     var arrayPassageiro = ImgArray;
-    var copyState = this.state;
+    var copyState = ImgArray;
     ImgArray.forEach((img, i) => {
       var RandomN =
         Math.floor(Math.random() * (this.state.max - i - this.state.min)) +
         this.state.min;
-      copyState.array[i] = arrayPassageiro[RandomN];
+      copyState[i] = arrayPassageiro[RandomN];
       //setArray(novoArray);
       arrayPassageiro.splice(RandomN, 1);
     });
-    copyState.started = true;
-    this.setState(copyState);
-    return this.state;
+    //copyState.started = true;
+    //this.setState(copyState);
+    return copyState;
   }
 
   reveal(e) {
@@ -155,7 +154,7 @@ class Cards extends React.Component {
   render() {
     return (
       <div className="painel">
-        {this.state.array.map((img, i) => {
+        {ImgArray.map((img, i) => {
           return (
             <div
               name="divImg"
