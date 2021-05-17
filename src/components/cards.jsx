@@ -56,17 +56,17 @@ class Cards extends Component {
       lastElement: "",
       lastImage: "",
       started: false,
-      min: Math.ceil(0),
-      max: Math.floor(11),
+      //min: Math.ceil(0),
+      //max: Math.floor(11),
       srcNew: "",
       array: this.randomArray()
     };
   }
 
   randomSrc() {
-    var RandomN =
-      Math.floor(Math.random() * (this.state.max - this.state.min)) +
-      this.state.min;
+    // var RandomN =
+    // Math.floor(Math.random() * (this.state.max - this.state.min)) +
+    // this.state.min;
     //srcNew = arrayPassageiro[RandomN];
     //max--;
     //arrayPassageiro.splice(RandomN, 1);
@@ -78,16 +78,16 @@ class Cards extends Component {
   randomArray() {
     var arrayPassageiro = ImgArray;
     var copyState = ImgArray;
-    ImgArray.forEach((img, i) => {
-      var RandomN =
-        Math.floor(Math.random() * (this.state.max - i - this.state.min)) +
-        this.state.min;
+    var min = Math.ceil(0);
+    var max = Math.floor(11);
+    ImgArray.map((img, i) => {
+      var RandomN = Math.floor(Math.random() * (max - i - min)) + min;
       copyState[i] = arrayPassageiro[RandomN];
-      //setArray(novoArray);
       arrayPassageiro.splice(RandomN, 1);
     });
     //copyState.started = true;
     //this.setState(copyState);
+    console.log(copyState);
     return copyState;
   }
 
@@ -127,9 +127,9 @@ class Cards extends Component {
             */
             }
           } else {
-            this.setState.lastElement(div);
-            this.setState.lastImage(image);
-            this.setState.point(image.src);
+            this.setState({lastElement:div});
+            this.setState({lastImage:image});
+            this.setState({point:image.src});
           }
         }
       } else {
