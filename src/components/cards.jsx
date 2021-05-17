@@ -59,7 +59,8 @@ class Cards extends Component {
       //min: Math.ceil(0),
       //max: Math.floor(11),
       srcNew: "",
-      array: this.randomArray()
+      
+     //array: this.randomArray()
     };
   }
 
@@ -75,7 +76,7 @@ class Cards extends Component {
     //return srcNew;
   }
 
-  randomArray() {
+    randomArray() {
     var arrayPassageiro = ImgArray;
     var copyState = ImgArray;
     var min = Math.ceil(0);
@@ -170,7 +171,7 @@ class Cards extends Component {
                 onClick={e => {
                   this.unreveal(e);
                 }}
-                src={img}
+                src={this.props.img}
               ></img>
             </div>
           );
