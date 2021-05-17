@@ -1,4 +1,4 @@
-import React, {  Component } from "react";
+import React, { Component } from "react";
 
 import "../styles/styles.css";
 
@@ -59,9 +59,8 @@ class Cards extends Component {
       min: Math.ceil(0),
       max: Math.floor(11),
       srcNew: "",
-      
+      array: this.randomArray()
     };
-   // this.array= this.randomArray()
   }
 
   randomSrc() {
@@ -155,11 +154,7 @@ class Cards extends Component {
   render() {
     return (
       <div className="painel">
-        {
-          this.state
-            
-          
-          /*ImgArray.map((img, i) => {
+        {ImgArray.map((img, i) => {
           return (
             <div
               name="divImg"
@@ -179,7 +174,7 @@ class Cards extends Component {
               ></img>
             </div>
           );
-        })*/}
+        })}
       </div>
     );
   }
