@@ -171,7 +171,7 @@ class Cards extends Component {
                 onClick={e => {
                   this.unreveal(e);
                 }}
-                src={this.props.img}
+                src={this.props.img[i]}
               ></img>
             </div>
           );
