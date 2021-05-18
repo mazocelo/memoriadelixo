@@ -30,25 +30,23 @@ var ImgArray = [
 ];
 
 export default function Jogo(props) {
-  const [array, setArray] = useState([]);
+  const [array, setArray] = useState(ImgArray);
 
   function randomImg() {
     var arrayPassageiro = ImgArray;
     var copyState = [];
     var min = Math.ceil(0);
     var max = Math.floor(11);
-    ImgArray.map((img,i) => {
+    Array.map((img, i) => {
       var randomN = Math.floor(Math.random() * (max - min)) + min;
       copyState[i] = arrayPassageiro[randomN];
       arrayPassageiro.splice(randomN, 1);
-      console.log(i,randomN,copyState)
-      max--
+      //setArray(copyState);
+      console.log(i, array, copyState);
+      max--;
     });
-    //copyState.started = true;
-    //this.setState(copyState);
     console.log(copyState);
-    setArray(copyState);
-    return array;
+    return setArray(copyState);
   }
 
   return (
