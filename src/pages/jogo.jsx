@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState} from 'react'
 import Cards from '../components/cards.jsx'
 
 
@@ -31,9 +31,12 @@ var ImgArray = [
 ];
 
 
-
 export default function Jogo(props){
-  var randomImg =()=>{
+ 
+ const[array,setArray] = useState([]) 
+  
+  
+  function randomImg (){
     var arrayPassageiro = ImgArray;
     var copyState = ImgArray;
     var min = Math.ceil(0);
@@ -46,14 +49,20 @@ export default function Jogo(props){
     //copyState.started = true;
     //this.setState(copyState);
     console.log(copyState);
+     setArray(copyState);
     return copyState;   
     
   }
+ 
+  
+  
+  
   
   return( 
     <div className="jogo" >
-    
-      <Cards img ={randomImg}/>
+      <button onClick={(e)=>{randomImg(e)}}>embaralhar</button>
+      
+      <Cards img ={array}/>
      
    
     
