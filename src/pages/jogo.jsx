@@ -37,16 +37,28 @@ export default function Jogo(props) {
     var copyState = [];
     var min = Math.ceil(0);
     var max = Math.floor(11);
-    Array.map((img, i) => {
+    for(let i = 0; i >=11; i++){
+        var randomN = Math.floor(Math.random() * (max - i - min)) + min;
+      copyState[i] = arrayPassageiro[randomN];
+      arrayPassageiro.splice(randomN, 1);
+      //setArray(copyState);
+      console.log(copyState)
+
+    }
+    /*
+    array.map((img, i) => {
       var randomN = Math.floor(Math.random() * (max - min)) + min;
       copyState[i] = arrayPassageiro[randomN];
       arrayPassageiro.splice(randomN, 1);
       //setArray(copyState);
-      console.log(i, array, copyState);
+      console.log(max,min)
+      //console.log(i, array, copyState);
       max--;
     });
-    console.log(copyState);
-    return setArray(copyState);
+    */
+    setArray(copyState);
+    console.log(array);
+    return;
   }
 
   return (
