@@ -18,35 +18,15 @@ const src5 =
 const src6 =
   "https://cdn.glitch.com/ee2b2e5b-f1c2-458e-83cd-dbede40e5fec%2Fluxuria%20de%20bolsonaro.png?v=1620939762682";
 
-var ImgArray = [
-  src1,
-  src2,
-  src3,
-  src4,
-  src5,
-  src6,
-  src1,
-  src2,
-  src3,
-  src4,
-  src5,
-  src6
-];
 
-var jafoi = [];
+
+var cards = new Array(12)
 
 var limite = false;
 
 var revealed = false;
 var revealed2 = false;
-/*
-var Startbtn=()=> {
-    if(started){
-      return <h2>bomjogo</h2>
-    }else{
-    return <button onClick={randomArray}>Iniciar</button>;
-  }}
-*/
+
 class Cards extends Component {
   constructor(props) {
     super(props);
@@ -55,42 +35,9 @@ class Cards extends Component {
       point: "",
       lastElement: "",
       lastImage: "",
-      started: false,
-      //min: Math.ceil(0),
-      //max: Math.floor(11),
-      srcNew: "",
-      
-     //array: this.randomArray()
     };
   }
 
-  randomSrc() {
-    // var RandomN =
-    // Math.floor(Math.random() * (this.state.max - this.state.min)) +
-    // this.state.min;
-    //srcNew = arrayPassageiro[RandomN];
-    //max--;
-    //arrayPassageiro.splice(RandomN, 1);
-    //console.log(RandomN);
-    //console.log(arrayPassageiro);
-    //return srcNew;
-  }
-
-    randomArray() {
-    var arrayPassageiro = ImgArray;
-    var copyState = ImgArray;
-    var min = Math.ceil(0);
-    var max = Math.floor(11);
-    ImgArray.map((img, i) => {
-      var RandomN = Math.floor(Math.random() * (max - i - min)) + min;
-      copyState[i] = arrayPassageiro[RandomN];
-      arrayPassageiro.splice(RandomN, 1);
-    });
-    //copyState.started = true;
-    //this.setState(copyState);
-    console.log(copyState);
-    return copyState;
-  }
 
   reveal(e) {
     var copyState = {};
@@ -105,15 +52,12 @@ class Cards extends Component {
           div.classList.remove("diVirada");
           copyState = this.state.count + 1;
           this.setState(copyState);
-
-          //console.log(count);
           if (this.state.count == 1) {
             if (this.state.point === image.src) {
               div.classList.add("div-point");
               this.state.lastElement.classList.add("div-point");
               this.state.lastImage.classList.add("point");
               image.classList.add("point");
-
               copyState.count = 0;
               this.setState(copyState);
             } else {
@@ -145,7 +89,6 @@ class Cards extends Component {
     } else {
       image.classList.add("viradas");
       image.classList.remove("block");
-      //console.log(div);
       div.classList.add("diVirada");
       copyState.count = copyState.count - 1;
       this.setState(copyState);
@@ -155,7 +98,7 @@ class Cards extends Component {
   render() {
     return (
       <div className="painel">
-        {ImgArray.map((img, i) => {
+        {cards.map((img, i) => {
           return (
             <div
               name="divImg"
