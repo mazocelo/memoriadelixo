@@ -48,17 +48,17 @@ export default function Jogo(props) {
     console.log(array);
     return;
   }
-
+  
   return (
     <div className="jogo">
-      <button
+  <button
         onClick={e => {
           randomImg(e);
         }}
       >
         embaralhar
       </button>
-
+    
       <Cards img={array} />
     </div>
   );

@@ -5,27 +5,12 @@ import "../styles/styles.css";
 const CardLogo =
   "https://cdn.glitch.com/ee2b2e5b-f1c2-458e-83cd-dbede40e5fec%2Flatadelixo.png?v=1621015281528";
 
-const src1 =
-  "https://cdn.glitch.com/ee2b2e5b-f1c2-458e-83cd-dbede40e5fec%2FCapturar.PNG?v=1620938384884";
-const src2 =
-  "https://cdn.glitch.com/ee2b2e5b-f1c2-458e-83cd-dbede40e5fec%2FInquerito%20fk%20news.png?v=1620938407826";
-const src3 =
-  "https://cdn.glitch.com/ee2b2e5b-f1c2-458e-83cd-dbede40e5fec%2FSem%20t%C3%ADtulo.png?v=1620938467861";
-const src4 =
-  "https://cdn.glitch.com/ee2b2e5b-f1c2-458e-83cd-dbede40e5fec%2FPortaria%20Eleva%20Sal%C3%A1rio%20de%20bolsonaro.png?v=1620939194426";
-const src5 =
-  "https://cdn.glitch.com/ee2b2e5b-f1c2-458e-83cd-dbede40e5fec%2FBolsonaro%20e%20Mil%C3%ADcia.png?v=1620939289084";
-const src6 =
-  "https://cdn.glitch.com/ee2b2e5b-f1c2-458e-83cd-dbede40e5fec%2Fluxuria%20de%20bolsonaro.png?v=1620939762682";
-
-
-
-var cards = new Array(12)
-
 var limite = false;
 
 var revealed = false;
 var revealed2 = false;
+
+const cardsN= [1,2,3,4,5,6,7,8,9,10,11,12]
 
 class Cards extends Component {
   constructor(props) {
@@ -35,15 +20,18 @@ class Cards extends Component {
       point: "",
       lastElement: "",
       lastImage: "",
+      
     };
   }
 
-
   reveal(e) {
+    
     var copyState = {};
     let image = e.target.childNodes[0];
     let div = e.target;
+    
     console.log(this.state);
+
     if (this.state.count < 2) {
       if (image) {
         if (div.classList[1] == "diVirada") {
@@ -72,9 +60,9 @@ class Cards extends Component {
             */
             }
           } else {
-            this.setState({lastElement:div});
-            this.setState({lastImage:image});
-            this.setState({point:image.src});
+            this.setState({ lastElement: div });
+            this.setState({ lastImage: image });
+            this.setState({ point: image.src });
           }
         }
       } else {
@@ -98,7 +86,7 @@ class Cards extends Component {
   render() {
     return (
       <div className="painel">
-        {cards.map((img, i) => {
+        {cardsN.map((i) => {
           return (
             <div
               name="divImg"
