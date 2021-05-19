@@ -48,6 +48,9 @@
  background-size:contain
   
 }
+.none{
+  display:none;
+}
 
 @media screen and (max-width: 660px) {
   .card{

@@ -43,7 +43,7 @@ export default function Jogo(props) {
       arrayPassageiro.splice(randomN, 1);
       setArray(copyState);
     }
-    e.target.classList.add =
+    e.target.classList.add('none')
     setArray(copyState);
     return;
   }
