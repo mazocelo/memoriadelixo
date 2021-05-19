@@ -21,7 +21,6 @@ class Cards extends Component {
     };
   }
   reveal(e) {
-    var copyState = {};
     let image = e.target.childNodes[0];
     let div = e.target;
     if (this.state.count < 2) {
@@ -30,10 +29,7 @@ class Cards extends Component {
           image.classList.remove("viradas");
           image.classList.add("block");
           div.classList.remove("diVirada");
-          copyState = this.state.count + 1;
-
-          console.log("+1", this.state.count);
-          this.setState({ count: copyState.count });
+          this.setState({ count: this.state.count + 1 });
 
           if (this.state.count == 1) {
             if (this.state.point === image.src) {
@@ -41,10 +37,7 @@ class Cards extends Component {
               this.state.lastElement.classList.add("div-point");
               this.state.lastImage.classList.add("point");
               image.classList.add("point");
-
-              copyState.count = 0;
-              console.log("zerou", this.state);
-              this.setState({ count: copyState.count });
+              this.setState({ count: 0 });
             } else {
               /*
             lastElement.classList.add('diVirada')
@@ -75,9 +68,7 @@ class Cards extends Component {
       image.classList.add("viradas");
       image.classList.remove("block");
       div.classList.add("diVirada");
-      copyState = this.state.count - 1;
-      console.log("-1", this.state);
-      this.setState({ count: copyState.count });
+      this.setState({ count: this.state.count - 1 });
     }
   }
   render() {

@@ -32,7 +32,7 @@ var ImgArray = [
 export default function Jogo(props) {
   const [array, setArray] = useState(ImgArray);
 
-  function randomImg() {
+  function randomImg(e) {
     var arrayPassageiro = ImgArray;
     var copyState = [];
     var min = Math.ceil(0);
@@ -43,6 +43,7 @@ export default function Jogo(props) {
       arrayPassageiro.splice(randomN, 1);
       setArray(copyState);
     }
+    e.target.classList.add =
     setArray(copyState);
     return;
   }
