@@ -31,17 +31,20 @@ class Cards extends Component {
           image.classList.add("block");
           div.classList.remove("diVirada");
           copyState = this.state.count + 1;
-          console.log(this.state.count);
-          this.setState({copyState});
-          
+
+          console.log("+1", this.state.count);
+          this.setState({ count: copyState.count });
+
           if (this.state.count == 1) {
             if (this.state.point === image.src) {
               div.classList.add("div-point");
               this.state.lastElement.classList.add("div-point");
               this.state.lastImage.classList.add("point");
               image.classList.add("point");
+
               copyState.count = 0;
-               this.setState({copyState});
+              console.log("zerou", this.state);
+              this.setState({ count: copyState.count });
             } else {
               /*
             lastElement.classList.add('diVirada')
@@ -57,7 +60,6 @@ class Cards extends Component {
             this.setState({ lastElement: div });
             this.setState({ lastImage: image });
             this.setState({ point: image.src });
-          
           }
         }
       } else {
@@ -68,13 +70,14 @@ class Cards extends Component {
     var copyState = this.state;
     let image = e.target;
     let div = e.target.parentNode;
-    if (image.classList[2] == "point") {
+    if (image.classList[2] === "point") {
     } else {
       image.classList.add("viradas");
       image.classList.remove("block");
       div.classList.add("diVirada");
-      copyState = this.state.count + 1;
-      this.setState({copyState});
+      copyState = this.state.count - 1;
+      console.log("-1", this.state);
+      this.setState({ count: copyState.count });
     }
   }
   render() {
