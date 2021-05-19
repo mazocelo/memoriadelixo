@@ -37,28 +37,24 @@ export default function Jogo(props) {
     var copyState = [];
     var min = Math.ceil(0);
     var max = Math.floor(11);
-    for(let i = 0; i <=11; i++){
-        var randomN = Math.floor(Math.random() * (max - i - min)) + min;
+    for (let i = min; i <= max; i++) {
+      var randomN = Math.floor(Math.random() * (max - i - min)) + min;
       copyState[i] = arrayPassageiro[randomN];
       arrayPassageiro.splice(randomN, 1);
-      //setArray(copyState);
-      console.log(copyState)
+      setArray(copyState);
     }
     setArray(copyState);
-    console.log(array);
     return;
   }
-  
   return (
     <div className="jogo">
-  <button
+      <button
         onClick={e => {
           randomImg(e);
         }}
       >
         embaralhar
       </button>
-    
       <Cards img={array} />
     </div>
   );

@@ -82,11 +82,10 @@ class Cards extends Component {
       this.setState(copyState);
     }
   }
-
   render() {
     return (
       <div className="painel">
-        {cardsN.map((i) => {
+        {cardsN.map((n,i) => {
           return (
             <div
               name="divImg"
