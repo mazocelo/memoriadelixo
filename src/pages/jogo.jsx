@@ -32,7 +32,7 @@ var ImgArray = [
 export default function Jogo(props) {
   const [array, setArray] = useState(ImgArray);
   const [start, setStart] = useState(false);
-
+  const [begin,setBegin]= useState(0);
   function randomImg(e) {
     var arrayPassageiro = ImgArray;
     var copyState = [];
@@ -52,12 +52,13 @@ export default function Jogo(props) {
     e.target.classList.add("none");
     setArray(copyState);
     setStart(true);
+    setBegin(new Date())
     return;
   }
 
   return (
     <div className="jogo">
-      <Tempo start={start} />
+      <Tempo start={start} begin = {begin} />
       <button
         onClick={e => {
           randomImg(e);
