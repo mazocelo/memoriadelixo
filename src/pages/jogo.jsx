@@ -38,21 +38,32 @@ export default function Jogo(props) {
     var copyState = [];
     var min = Math.ceil(0);
     var max = Math.floor(11);
+
+    //nao altera a ultima img
     for (let i = min; i <= max; i++) {
       var randomN = Math.floor(Math.random() * (max - i - min)) + min;
       copyState[i] = arrayPassageiro[randomN];
       arrayPassageiro.splice(randomN, 1);
       setArray(copyState);
     }
+     //altera a ultima img
+    arrayPassageiro = copyState;
+    for (let i = max; i > min; i--) {
+      var randomN = Math.floor(Math.random() * (max -i - min)) + min;
+      copyState[i] = arrayPassageiro[randomN];
+      arrayPassageiro.splice(randomN, 1);
+      setArray(copyState);
+    }
+   
     e.target.classList.add("none");
     setArray(copyState);
-    setStart(true)
+    setStart(true);
     return;
   }
 
   return (
     <div className="jogo">
-      <Tempo start = {start}/>
+      <Tempo start={start} />
       <button
         onClick={e => {
           randomImg(e);
