@@ -11,7 +11,8 @@ const initialState = {
   count: 0,
   point: "",
   lastElement: [],
-  lastImage: []
+  lastImage: [],
+  pontos:0
 };
 
 class Cards extends Component {
@@ -37,7 +38,9 @@ class Cards extends Component {
                 this.state.lastElement.classList.add("div-point");
                 this.state.lastImage.classList.add("point");
                 image.classList.add("point");
+                this.setState({pontos: +1})
                 this.setState({ count: 0 });
+                console.log(this.state.pontos)
               } else {
                 setTimeout(() => {
                   this.state.lastElement.classList.add("diVirada");
@@ -46,7 +49,7 @@ class Cards extends Component {
                   image.classList.add("viradas");
                   image.classList.remove("block");
                   div.classList.add("diVirada");
-                 // console.log(this.state.count);
+                  // console.log(this.state.count);
                   this.setState({ count: 0 });
                 }, 1200);
                 //this.setState({ count: 0 });
@@ -74,25 +77,10 @@ class Cards extends Component {
       this.setState({ count: this.state.count - 1 });
     }
   }
-  
-   checagemDaVitoria(e) {
-    console.log(e.target.childNodes)
-     /*   var divs = e.target.childNodes;
-  
-    [...divs].forEach((div, i) => {
-      console.log("aqui", div);
-    });
-     console.log(e)
-  */
-  }
-  
-  
-  
+
   render() {
     return (
-      <div className="painel"   onClick={(e) => {
-          this.checagemDaVitoria(e);
-        }}>
+      <div className="painel">
         {cardsN.map((n, i) => {
           return (
             <div
