@@ -52,6 +52,10 @@
   display:none;
 }
 
+.tempo-h{
+  color:red;
+}
+
 @media screen and (max-width: 660px) {
   .card{
    width: 140px;

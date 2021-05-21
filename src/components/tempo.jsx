@@ -4,8 +4,8 @@ class Tempo extends Component {
   constructor(props) {
     super(props);
     this.state = { começo: new Date(),
-                   agora: new Date(),
-                  
+                   agora: 0,
+                    start:false,
                  };
   }
 
@@ -20,15 +20,17 @@ class Tempo extends Component {
   */
 
   tick() {
+    var novoAgora = this.state.começo - new Date()
+    novoAgora =Math.round(novoAgora *0.001) 
     this.setState({
-      agora: new Date()
+      agora: novoAgora
     });
   }
 
   render() {
     return (
       <div className="tempo">
-        <h2 className="tempo-h">{ Math.ceil((this.state.começo - this.state.agora))*-1}s</h2>
+        <h2 className="tempo-h">{ifthis.state.agora*-1}s</h2>
       </div>
     );
   }
