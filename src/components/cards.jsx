@@ -71,8 +71,9 @@ class Cards extends Component {
       }
     }
     if (this.state.win) {
-      var inputs = document.getElementById("vitoria");
+      var inputs = document.ocument.querySelector("#vitoria");
       inputs.style.opacity = 1;
+      inputs.focus()
     }
   }
   unreveal(e) {
@@ -99,7 +100,7 @@ class Cards extends Component {
             className="vitoria-input"
             type="text"
             placeholder="digite seu nick"
-          ></input>
+          />
         </div>
       );
     } else {
