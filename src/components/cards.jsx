@@ -12,7 +12,7 @@ const initialState = {
   point: "",
   lastElement: [],
   lastImage: [],
-  pontos:0
+  pontos: 0
 };
 
 class Cards extends Component {
@@ -31,16 +31,15 @@ class Cards extends Component {
             image.classList.add("block");
             div.classList.remove("diVirada");
             this.setState({ count: this.state.count + 1 });
-
             if (this.state.count == 1) {
               if (this.state.point === image.src) {
                 div.classList.add("div-point");
                 this.state.lastElement.classList.add("div-point");
                 this.state.lastImage.classList.add("point");
                 image.classList.add("point");
-                this.setState({pontos: +1})
+                this.setState({ pontos: this.state.pontos + 1 });
                 this.setState({ count: 0 });
-                console.log(this.state.pontos)
+                console.log(this.state.pontos);
               } else {
                 setTimeout(() => {
                   this.state.lastElement.classList.add("diVirada");
@@ -49,10 +48,8 @@ class Cards extends Component {
                   image.classList.add("viradas");
                   image.classList.remove("block");
                   div.classList.add("diVirada");
-                  // console.log(this.state.count);
                   this.setState({ count: 0 });
                 }, 1200);
-                //this.setState({ count: 0 });
               }
             } else {
               this.setState({ lastElement: div });
@@ -63,6 +60,9 @@ class Cards extends Component {
         } else {
         }
       }
+    }
+    if (this.state.pontos === 5) {
+      console.log("voce venceu");
     }
   }
   unreveal(e) {
