@@ -44,8 +44,8 @@ class Cards extends Component {
                 console.log(this.state.pontos);
                 //vencer
                 if (this.state.pontos == 5) {
-                  var body = document.querySelector('body')
-                  body.style.opacity = 0.4
+                  var body = document.querySelector('.jogo')
+                  body.style.opacity = 0.5
                   var tempo = document.querySelector('.tempo-h')
                   console.log(tempo.outerText)
                   this.setState({win:true,winText:tempo.outerText})
@@ -90,8 +90,8 @@ class Cards extends Component {
     let input;
     
     if(this.state.win){
-      input = <div><label>este foi seu tempo{this.state.winText}</label>
-              <input className='vitoria-input' type='text'placeholder='digite seu nick'></input>
+      input = <div className='vitoria-input' ><label>este foi seu tempo{this.state.winText}</label>
+              <input  type='text'placeholder='digite seu nick'></input>
     </div>
       
     }else{}
