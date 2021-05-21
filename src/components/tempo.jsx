@@ -3,13 +3,14 @@ import React, { Component } from "react";
 class Tempo extends Component {
   constructor(props) {
     super(props);
-    this.state = { começo: new Date(), agora: 0, start: false };
+    this.state = { começo: 0, agora: 0, start: false };
   }
 
   componentDidMount() {
     //this.timerID=
-    setInterval(() => this.tick(), 1000);
    
+    setInterval(() => this.tick(), 1000);
+    
   }
   /*
      componentWillUnmount() {
@@ -27,8 +28,10 @@ class Tempo extends Component {
   }
 
   render() {
+    
     let h2;
     if (this.props.start) {
+      
       h2=<h2 className="tempo-h">{this.state.agora * -1}s</h2>;
     }else{
       h2=<h2 className="tempo-h">0s</h2>;
