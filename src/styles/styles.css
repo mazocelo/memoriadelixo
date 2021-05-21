@@ -56,15 +56,29 @@
   color:red;
 }
 
-.vitoria-input{
+.vitoria{
+  height:100%;
+  width:100%;
+  background-color: white;
+  border: 3px solid blue;
+  border-radius: 10%;
   position:absolute;
-  top:0;
+  display: inline;
+  top: 0;
   bottom:0;
   left:0;
   right:0;
   color: green;
-font-size: 4em;  
-  opacity:1
+  font-size: 4em;  
+  opacity:1;
+  
+}
+.vitoria-input{
+  height: 100%;
+  font-size:2em;
+}
+#vitoria{
+   opacity:1;
 }
 @media screen and (max-width: 660px) {
   .card{
@@ -78,7 +92,10 @@ font-size: 4em;
 
 }
 
-.vitoria-input{
+.vitoria{
+  text-align:center;
+  height:100%;
+  width:100%;
   background-color: white;
   border: 3px solid blue;
   border-radius: 10%;
@@ -92,6 +109,10 @@ font-size: 4em;
   font-size: 2em;  
   opacity:1;
   
+}
+.vitoria-input{
+  height: 100%;
+  font-size: 0.8em;
 }
 #vitoria{
    opacity:1;
