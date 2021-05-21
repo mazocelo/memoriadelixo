@@ -1,10 +1,9 @@
-body{
-font-family: 'Zen Dots', cursive;
+body {
+  font-family: "Zen Dots", cursive;
 }
 .imgs {
-  
   position: relative;
-  bottom:-20px;
+  bottom: -20px;
   width: 85%;
   height: 85%;
   padding: auto;
@@ -12,10 +11,8 @@ font-family: 'Zen Dots', cursive;
 }
 .viradas {
   display: none;
-  
 }
 .card {
- 
   padding: auto;
   margin: auto;
   size: 100%;
@@ -27,8 +24,6 @@ font-family: 'Zen Dots', cursive;
   border-radius: 20%;
 }
 .block {
-  
-  
   display: block;
 }
 .painel {
@@ -36,112 +31,101 @@ font-family: 'Zen Dots', cursive;
   flex-direction: row;
   flex-wrap: wrap;
 }
-.jogo{
-
+.jogo {
 }
-.link-img{
-  display:none;  
+.link-img {
+  display: none;
 }
-.div-point{
-  transition:1000ms;
-   border: 8px solid green;
+.div-point {
+  transition: 1000ms;
+  border: 8px solid green;
 }
-.diVirada{
-   background: url("https://cdn.glitch.com/ee2b2e5b-f1c2-458e-83cd-dbede40e5fec%2Flixo%20monstro.jpg?v=1621100289278") no-repeat center;     
- background-size:contain
-  
+.diVirada {
+  background: url("https://cdn.glitch.com/ee2b2e5b-f1c2-458e-83cd-dbede40e5fec%2Flixo%20monstro.jpg?v=1621100289278")
+    no-repeat center;
+  background-size: contain;
 }
-.none{
-  display:none;
-}
-
-.tempo-h{
-  color:red;
+.none {
+  display: none;
 }
 
-.vitoria{
-  height:100%;
-  width:100%;
+.tempo-h {
+  color: red;
+}
+
+.vitoria {
+  height: 100%;
+  width: 100%;
   background-color: white;
   border: 3px solid blue;
   border-radius: 10%;
-  position:absolute;
+  position: absolute;
   display: inline;
   top: 0;
-  bottom:0;
-  left:0;
-  right:0;
-  color: green;
-  font-size: 4em;  
-  opacity:1;
-  
+  bottom: 0;
+  left: 0;
+  right: 0;
+  color: #0cce6b;
+  font-size: 4em;
+  opacity: 1;
 }
-.vitoria-input{
+.vitoria-input {
   height: 70%;
   width: 90%;
-  margin:10px;
-  font-size:0.6em;
-  font-family: 'Zen Dots', cursive;
-   text-align:center;
-  position:static;
+  margin: 10px;
+  font-size: 0.6em;
+  font-family: "Zen Dots", cursive;
+  text-align: center;
+  position: static;
 }
 
-
-
-#vitoria{
-   opacity:1;
+.mal-feito {
+  margin: 10px;
+  font-family: "Zen Dots", cursive;
+  color: #0cce6b;
+  height: 80%;
 }
 
-
-
-
-
-
+#vitoria {
+  opacity: 1;
+}
 
 @media screen and (max-width: 600px) {
-  .card{
-   width: 140px;
-  height: 170px;
+  .card {
+    width: 140px;
+    height: 170px;
   }
-  .imgs{
-  width: 85%;
-  height:85%;
+  .imgs {
+    width: 85%;
+    height: 85%;
   }
-
 }
 
-.vitoria{
-  text-align:center;
-  height:18%;
-  width:90%;
-  background-color: white;
-  border: 3px solid blue;
+.vitoria {
+  text-align: center;
+  height: 18%;
+  width: 90%;
   border-radius: 10%;
-  position:absolute;
+  position: absolute;
   display: flex;
   top: 20%;
-  bottom:0;
-  left:0;
-  right:0;
-  color: green;
-  font-size: 2em;  
-  opacity:1;
-  
+  bottom: 0;
+  left: 0;
+  right: 0;
+  font-size: 2em;
+  opacity: 1;
 }
-.vitoria-input{
- 
-  color: green;
+.vitoria-input {
 }
-.vitoria-label{
-  margin:10px;
+.vitoria-label {
+  margin: 10px;
 }
-#vitoria{
-   opacity:1;
+#vitoria {
+  opacity: 1;
 }
-.diVirada{
- /*
+.diVirada {
+  /*
    
  background: url("https://cdn.glitch.com/ee2b2e5b-f1c2-458e-83cd-dbede40e5fec%2Flixo%20monstro.jpg?v=1621100289278") no-repeat center fixed;     
   background-size:contain; /*cover;*/
-
 }

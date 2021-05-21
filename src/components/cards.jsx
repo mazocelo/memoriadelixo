@@ -48,7 +48,7 @@ class Cards extends Component {
                   painel.style.opacity = 0.5;
                   var tempo = document.querySelector(".tempo-h");
                   this.setState({ win: true, winText: tempo.outerText });
-                  this.victory()
+                  this.victory();
                 }
               } else {
                 setTimeout(() => {
@@ -99,16 +99,13 @@ class Cards extends Component {
     inputs.style.opacity = 1;
     inputs.focus();
   }
-  
-  
-  sendScore(e){
 
-  }
+  sendScore(e) {}
 
   render() {
     let input;
 
-    if (!this.state.win) {
+    if (this.state.win) {
       input = (
         <div id="vitoria" className="vitoria">
           <label className="vitoria-label">
@@ -119,7 +116,15 @@ class Cards extends Component {
             type="text"
             placeholder="digite seu nick"
           />
-          <button className="mal-feito" onClick={(e)=>{this.sendScore(e)}}> Mal feito, feito!</button>
+          <button
+            className="mal-feito"
+            onClick={e => {
+              this.sendScore(e);
+            }}
+          >
+            {" "}
+            Mal feito, feito!
+          </button>
         </div>
       );
     } else {
