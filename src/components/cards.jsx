@@ -105,7 +105,7 @@ class Cards extends Component {
   render() {
     let input;
 
-    if (!this.state.win) {
+    if (this.state.win) {
       input = (
         <div id="vitoria" className="vitoria">
           <label className="vitoria-label">
