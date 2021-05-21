@@ -9,9 +9,7 @@ class Tempo extends Component {
   componentDidMount() {
     //this.timerID=
     setInterval(() => this.tick(), 1000);
-    if(this.props.start){
-      this.setState({start:true})  
-    }
+   
   }
   /*
      componentWillUnmount() {
@@ -30,10 +28,10 @@ class Tempo extends Component {
 
   render() {
     let h2;
-    if (this.state.start) {
-      <h2 className="tempo-h">{this.state.agora * -1}s</h2>;
+    if (this.props.start) {
+      h2=<h2 className="tempo-h">{this.state.agora * -1}s</h2>;
     }else{
-      <h2 className="tempo-h">{this.state.agora * -1}s</h2>;
+      h2=<h2 className="tempo-h">0s</h2>;
     }
 
     return <div className="tempo">{h2}</div>;

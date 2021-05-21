@@ -58,7 +58,7 @@ export default function Jogo(props) {
           randomImg(e);
         }}
       >
-        embaralhar
+        Embaralhar e Começar
       </button>
       <Cards img={array} />
     </div>
