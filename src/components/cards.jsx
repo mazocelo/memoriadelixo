@@ -89,8 +89,8 @@ class Cards extends Component {
     
     let input;
     
-    if(this.state.win){
-      input = <div className='vitoria-input' ><label>este foi seu tempo{this.state.winText}</label>
+    if(!this.state.win){
+      input = <div id="vitoria" className='vitoria-input' ><label>Seu tempo foi {this.state.winText}</label>
               <input  type='text'placeholder='digite seu nick'></input>
     </div>
       

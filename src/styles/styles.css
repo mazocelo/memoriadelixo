@@ -57,11 +57,14 @@
 }
 
 .vitoria-input{
-  position:relative;
+  position:absolute;
   top:0;
   bottom:0;
   left:0;
   right:0;
+  color: green;
+font-size: 4em;  
+  opacity:1
 }
 @media screen and (max-width: 660px) {
   .card{
@@ -73,6 +76,25 @@
   height:85%;
   }
 
+}
+
+.vitoria-input{
+  background-color: white;
+  border: 3px solid blue;
+  border-radius: 10%;
+  position:relative;
+  display: inline;
+  top: -600px;
+  bottom:0;
+  left:0;
+  right:0;
+  color: green;
+  font-size: 2em;  
+  opacity:1;
+  
+}
+#vitoria{
+   opacity:1;
 }
 .diVirada{
  /*
