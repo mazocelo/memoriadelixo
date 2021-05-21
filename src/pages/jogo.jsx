@@ -32,7 +32,7 @@ var ImgArray = [
 export default function Jogo(props) {
   const [array, setArray] = useState(ImgArray);
   const [start, setStart] = useState(false);
-  const [begin,setBegin]= useState(new Date());
+  const [begin,setBegin]= useState(0);
   function randomImg(e) {
     var arrayPassageiro = ImgArray;
     var copyState = [];
@@ -53,6 +53,7 @@ export default function Jogo(props) {
     setArray(copyState);
     setStart(true);
     var novaData = new Date()
+    console.log(novaData)
     setBegin(novaData)
     return;
   }
