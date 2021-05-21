@@ -13,8 +13,8 @@ const initialState = {
   lastElement: [],
   lastImage: [],
   pontos: 0,
-  win:false,
-  winText:0,
+  win: false,
+  winText: 0
 };
 
 class Cards extends Component {
@@ -44,10 +44,10 @@ class Cards extends Component {
                 console.log(this.state.pontos);
                 //vencer
                 if (this.state.pontos == 5) {
-                  var jogo = document.querySelector('.jogo')
-                  jogo.style.opacity = 0.5
-                  var tempo = document.querySelector('.tempo-h')
-                  this.setState({win:true,winText:tempo.outerText})
+                  var jogo = document.querySelector(".jogo");
+                  jogo.style.opacity = 0.5;
+                  var tempo = document.querySelector(".tempo-h");
+                  this.setState({ win: true, winText: tempo.outerText });
                 }
               } else {
                 setTimeout(() => {
@@ -70,6 +70,10 @@ class Cards extends Component {
         }
       }
     }
+    if (this.state.win) {
+      var inputs = document.getElementById("vitoria");
+      inputs.style.opacity = 1;
+    }
   }
   unreveal(e) {
     var copyState = this.state;
@@ -85,15 +89,21 @@ class Cards extends Component {
   }
 
   render() {
-    
     let input;
-    
-    if(this.state.win){
-      input = <div id="vitoria" style="opacity:1;" className='vitoria' ><label>Seu tempo foi {this.state.winText}</label>
-              <input className='vitoria-input'  type='text'placeholder='digite seu nick'></input>
-    </div>
-      
-    }else{}
+
+    if (!this.state.win) {
+      input = (
+        <div id="vitoria" className="vitoria">
+          <label>Seu tempo foi {this.state.winText}</label>
+          <input
+            className="vitoria-input"
+            type="text"
+            placeholder="digite seu nick"
+          ></input>
+        </div>
+      );
+    } else {
+    }
     return (
       <div className="painel">
         {cardsN.map((n, i) => {
