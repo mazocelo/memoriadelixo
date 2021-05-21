@@ -3,7 +3,7 @@ import React, { Component } from "react";
 class Tempo extends Component {
   constructor(props) {
     super(props);
-    this.state = { begin: this.props.begin, agora: 0, start: this.props.start };
+    this.state = { agora: 0, start: this.props.start };
   }
 
   componentDidMount() {
@@ -20,13 +20,12 @@ class Tempo extends Component {
   componentWillUnmount() {}
 
   tick() {
-    var novoAgora = new Date();
-    -this.state.begin;
+    var novoAgora = new Date() - this.props.begin;
     novoAgora = Math.round(novoAgora * 0.001);
     this.setState({
       agora: novoAgora
     });
-    console.log(this.state.begin, this.props.start);
+    //console.log(this.props.begin ,this.state.begin, this.props.start);
   }
 
   render() {
