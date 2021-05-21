@@ -3,7 +3,10 @@ import React, { Component } from "react";
 class Tempo extends Component {
   constructor(props) {
     super(props);
-    this.state = { tempo: new Date() };
+    this.state = { começo: new Date(),
+                   agora: new Date(),
+                  
+                 };
   }
 
   componentDidMount() {
@@ -18,14 +21,14 @@ class Tempo extends Component {
 
   tick() {
     this.setState({
-      tempo: new Date()
+      agora: new Date()
     });
   }
 
   render() {
     return (
       <div className="tempo">
-        <h2 className="tempo-h">{this.state.tempo.toLocaleTimeString()}</h2>
+        <h2 className="tempo-h">{ Math.ceil((this.state.começo - this.state.agora))*-1}s</h2>
       </div>
     );
   }
