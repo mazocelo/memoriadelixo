@@ -32,7 +32,7 @@ var ImgArray = [
 export default function Jogo(props) {
   const [array, setArray] = useState(ImgArray);
   const [start, setStart] = useState(false);
-  const [begin,setBegin]= useState(0);
+  const [begin, setBegin] = useState(0);
   function randomImg(e) {
     var arrayPassageiro = ImgArray;
     var copyState = [];
@@ -41,26 +41,31 @@ export default function Jogo(props) {
 
     //nao altera a ultima img
     for (let i = max; i >= 0; i--) {
-      var randomN = Math.floor(Math.random() * (i ))
-      console.log(arrayPassageiro[10],randomN)
+      var randomN = Math.floor(Math.random() * i);
+      console.log(arrayPassageiro[10], randomN);
       copyState[i] = arrayPassageiro[randomN];
       arrayPassageiro.splice(randomN, 1);
       setArray(copyState);
-      
     }
-   
+
     e.target.classList.add("none");
     setArray(copyState);
     setStart(true);
-    var novaData = new Date()
-    console.log(novaData)
-    setBegin(novaData)
+    var novaData = new Date();
+    console.log(novaData);
+    setBegin(novaData);
     return;
   }
 
+  function checagemDaVitoria(e) {
+    var divs = e.target.childNodes
+    divs.map((div,i)=>{
+    console.log(div)
+    })
+  }
   return (
     <div className="jogo">
-      <Tempo start={start} begin = {begin} />
+      <Tempo start={start} begin={begin} />
       <button
         onClick={e => {
           randomImg(e);
@@ -68,7 +73,13 @@ export default function Jogo(props) {
       >
         Embaralhar e Começar
       </button>
-      <Cards start={start} img={array} />
+      <Cards
+        onChange={e => {
+          checagemDaVitoria(e);
+        }}
+        start={start}
+        img={array}
+      />
     </div>
   );
 }
