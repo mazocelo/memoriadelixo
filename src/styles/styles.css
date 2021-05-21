@@ -94,7 +94,7 @@
 
 .vitoria{
   text-align:center;
-  height:25%;
+  height:10%;
   width:100%;
   background-color: white;
   border: 3px solid blue;
@@ -116,6 +116,9 @@
   position:static;
   height: 70%;
   font-size: 0.8em;
+}
+.vitoria-label{
+  margin:10px;
 }
 #vitoria{
    opacity:1;

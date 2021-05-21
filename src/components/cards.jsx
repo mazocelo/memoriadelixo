@@ -44,10 +44,11 @@ class Cards extends Component {
                 console.log(this.state.pontos);
                 //vencer
                 if (this.state.pontos == 5) {
-                  var jogo = document.querySelector(".jogo");
-                  jogo.style.opacity = 0.5;
+                  var painel = document.querySelector(".painel");
+                  painel.style.opacity = 0.5;
                   var tempo = document.querySelector(".tempo-h");
                   this.setState({ win: true, winText: tempo.outerText });
+                  t
                 }
               } else {
                 setTimeout(() => {
@@ -73,7 +74,7 @@ class Cards extends Component {
     if (this.state.win) {
       var inputs = document.ocument.querySelector("#vitoria");
       inputs.style.opacity = 1;
-      inputs.focus()
+      inputs.focus();
     }
   }
   unreveal(e) {
@@ -88,46 +89,61 @@ class Cards extends Component {
       this.setState({ count: this.state.count - 1 });
     }
   }
+  /*
+  componentWilMount() {
+    this.victory()
+  }
+*/
+  victory() {
+    var inputs = document.ocument.querySelector("#vitoria");
+    inputs.style.opacity = 1;
+    inputs.focus();
+  }
 
   render() {
     let input;
 
-    if (!this.state.win) {
+    if (this.state.win) {
       input = (
         <div id="vitoria" className="vitoria">
-          <label>Seu tempo foi {this.state.winText}</label>
+          <label className="vitoria-label">
+            Seu tempo foi {this.state.winText}
+          </label>
           <input
             className="vitoria-input"
             type="text"
             placeholder="digite seu nick"
           />
+          <button> Mal feito, feito!</button>
         </div>
       );
     } else {
     }
     return (
-      <div className="painel">
-        {cardsN.map((n, i) => {
-          return (
-            <div
-              name="divImg"
-              key={i + "d2"}
-              onClick={e => {
-                this.reveal(e);
-              }}
-              className="card diVirada"
-            >
-              <img
-                key={i + "img"}
-                className="viradas imgs"
+      <div>
+        <div className="painel">
+          {cardsN.map((n, i) => {
+            return (
+              <div
+                name="divImg"
+                key={i + "d2"}
                 onClick={e => {
-                  this.unreveal(e);
+                  this.reveal(e);
                 }}
-                src={this.props.img[i]}
-              ></img>
-            </div>
-          );
-        })}
+                className="card diVirada"
+              >
+                <img
+                  key={i + "img"}
+                  className="viradas imgs"
+                  onClick={e => {
+                    this.unreveal(e);
+                  }}
+                  src={this.props.img[i]}
+                ></img>
+              </div>
+            );
+          })}
+        </div>
         {input}
       </div>
     );
