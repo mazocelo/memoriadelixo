@@ -20,17 +20,19 @@ class Tempo extends Component {
   componentWillUnmount() {}
 
   tick() {
-    var novoAgora = this.state.begin - new Date();
+    var novoAgora = new Date();
+    -this.state.begin;
     novoAgora = Math.round(novoAgora * 0.001);
     this.setState({
       agora: novoAgora
     });
+    console.log(this.state.begin, this.props.start);
   }
 
   render() {
     let h2;
     if (this.props.start) {
-      h2 = <h2 className="tempo-h">{this.state.agora * -1}s</h2>;
+      h2 = <h2 className="tempo-h">{this.state.agora}s</h2>;
     } else {
       h2 = <h2 className="tempo-h">0s</h2>;
     }
