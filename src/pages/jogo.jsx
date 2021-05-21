@@ -40,13 +40,13 @@ export default function Jogo(props) {
     var max = Math.floor(11);
 
     //nao altera a ultima img
-    for (let i = min; i <= max; i++) {
-      var randomN = Math.floor(Math.random() * (max - i));
+    for (let i = max; i >= 0; i--) {
+      var randomN = Math.floor(Math.random() * (i ))
       copyState[i] = arrayPassageiro[randomN];
       arrayPassageiro.splice(randomN, 1);
       setArray(copyState);
+      console.log(copyState[0], arrayPassageiro[0],randomN)
     }
-     //altera a ultima img
    
     e.target.classList.add("none");
     setArray(copyState);
