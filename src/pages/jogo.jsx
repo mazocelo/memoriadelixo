@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Cards from "../components/cards.jsx";
-
+import Tempo from "../components/tempo.jsx";
 const src1 =
   "https://cdn.glitch.com/ee2b2e5b-f1c2-458e-83cd-dbede40e5fec%2FCapturar.PNG?v=1620938384884";
 const src2 =
@@ -50,6 +50,14 @@ export default function Jogo(props) {
 
   return (
     <div className="jogo">
+      <Tempo/>
+      <button
+        onClick={e => {
+          randomImg(e);
+        }}
+      >
+        embaralhar
+      </button>
       <Cards img={array} />
     </div>
   );
