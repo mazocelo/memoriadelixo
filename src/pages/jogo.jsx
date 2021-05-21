@@ -55,12 +55,6 @@ export default function Jogo(props) {
     return;
   }
 
-  function checagemDaVitoria(e) {
-    var divs = e.target.childNodes;
-    divs.map((div, i) => {
-      console.log("aqui", div);
-    });
-  }
   return (
     <div className="jogo">
       <Tempo start={start} begin={begin} />
@@ -72,9 +66,7 @@ export default function Jogo(props) {
         Embaralhar e Começar
       </button>
       <Cards
-        onchange={(e) => {
-          checagemDaVitoria(e);
-        }}
+      
         start={start}
         img={array}
       />

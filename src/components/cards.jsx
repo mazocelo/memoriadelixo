@@ -74,9 +74,23 @@ class Cards extends Component {
       this.setState({ count: this.state.count - 1 });
     }
   }
+  
+   checagemDaVitoria(e) {
+    var divs = e.target.childNodes;
+   
+    [...divs].map((div, i) => {
+      console.log("aqui", div);
+    });
+     console.log(divs)
+  }
+  
+  
+  
   render() {
     return (
-      <div className="painel">
+      <div className="painel"   onClick={(e) => {
+          this.checagemDaVitoria(e);
+        }}>
         {cardsN.map((n, i) => {
           return (
             <div
