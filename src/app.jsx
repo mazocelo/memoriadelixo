@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Router, Link } from "wouter";
+import { Router,Route, Link } from "wouter";
 
 // Import and apply CSS stylesheet
 //import "./styles/styles.css";
@@ -13,5 +13,5 @@ import useHashLocation from "./hooks/wouter-hash";
 import Jogo from "./pages/jogo.jsx";
 
 export default function Home() {
-  return <Route path="/" component={Jogo}></Route>;
+  return <Route path="" component={Jogo}></Route>;
 }

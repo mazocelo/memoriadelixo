@@ -68,7 +68,7 @@ export default function Jogo(props) {
       >
         Embaralhar e Começar
       </button>
-      <Cards img={array} />
+      <Cards start={start} img={array} />
     </div>
   );
 }
