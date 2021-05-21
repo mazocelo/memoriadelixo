@@ -12,7 +12,9 @@ const initialState = {
   point: "",
   lastElement: [],
   lastImage: [],
-  pontos: 0
+  pontos: 0,
+  win:false,
+  winText:0,
 };
 
 class Cards extends Component {
@@ -44,7 +46,9 @@ class Cards extends Component {
                 if (this.state.pontos == 5) {
                   var body = document.querySelector('body')
                   body.style.opacity = 0.4
-                  this.setState({win:{this.props.tempod,}})
+                  var tempo = document.querySelector('.tempo-h')
+                  console.log(tempo.outerText)
+                  this.setState({win:true,winText:tempo.outerText})
                 }
               } else {
                 setTimeout(() => {
@@ -82,6 +86,15 @@ class Cards extends Component {
   }
 
   render() {
+    
+    let input;
+    
+    if(this.state.win){
+      input = <div><label>este foi seu tempo{this.state.winText}</label>
+              <input className='vitoria-input' type='text'placeholder='digite seu nick'></input>
+    </div>
+      
+    }else{}
     return (
       <div className="painel">
         {cardsN.map((n, i) => {
@@ -105,6 +118,7 @@ class Cards extends Component {
             </div>
           );
         })}
+        {input}
       </div>
     );
   }
