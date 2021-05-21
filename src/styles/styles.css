@@ -1,3 +1,6 @@
+body{
+font-family: 'Zen Dots', cursive;
+}
 .imgs {
   
   position: relative;
@@ -74,12 +77,27 @@
   
 }
 .vitoria-input{
-  height: 100%;
-  font-size:2em;
+  height: 70%;
+  width: 90%;
+  margin:10px;
+  font-size:0.6em;
+  font-family: 'Zen Dots', cursive;
+   text-align:center;
+  position:static;
 }
+
+
+
 #vitoria{
    opacity:1;
 }
+
+
+
+
+
+
+
 @media screen and (max-width: 600px) {
   .card{
    width: 140px;
@@ -94,8 +112,8 @@
 
 .vitoria{
   text-align:center;
-  height:10%;
-  width:100%;
+  height:18%;
+  width:90%;
   background-color: white;
   border: 3px solid blue;
   border-radius: 10%;
@@ -111,11 +129,8 @@
   
 }
 .vitoria-input{
-  margin:10px;
-  text-align:center;
-  position:static;
-  height: 70%;
-  font-size: 0.8em;
+ 
+  color: green;
 }
 .vitoria-label{
   margin:10px;
