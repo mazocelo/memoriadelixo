@@ -42,7 +42,7 @@ class Tempo extends Component {
       h2=<h2 className="tempo-h">0s</h2>;
     }
 
-    return <div start ={()=>{this.setState({begin: new Date()})}} className="tempo">{h2}</div>;
+    return <div start = { ()=> {  } } className="tempo">{h2}</div>;
   }
 }
 
