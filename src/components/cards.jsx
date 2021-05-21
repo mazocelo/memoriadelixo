@@ -40,6 +40,12 @@ class Cards extends Component {
                 this.setState({ pontos: this.state.pontos + 1 });
                 this.setState({ count: 0 });
                 console.log(this.state.pontos);
+                //vencer
+                if (this.state.pontos == 5) {
+                  var body = document.querySelector('body')
+                  body.style.opacity = 0.4
+                  this.setState({win:{this.props.tempod,}})
+                }
               } else {
                 setTimeout(() => {
                   this.state.lastElement.classList.add("diVirada");
@@ -60,9 +66,6 @@ class Cards extends Component {
         } else {
         }
       }
-    }
-    if (this.state.pontos === 5) {
-      console.log("voce venceu");
     }
   }
   unreveal(e) {
