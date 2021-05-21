@@ -42,7 +42,6 @@ export default function Jogo(props) {
     //nao altera a ultima img
     for (let i = max; i >= 0; i--) {
       var randomN = Math.floor(Math.random() * i);
-      console.log(arrayPassageiro[10], randomN);
       copyState[i] = arrayPassageiro[randomN];
       arrayPassageiro.splice(randomN, 1);
       setArray(copyState);
@@ -52,16 +51,15 @@ export default function Jogo(props) {
     setArray(copyState);
     setStart(true);
     var novaData = new Date();
-    console.log(novaData);
     setBegin(novaData);
     return;
   }
 
   function checagemDaVitoria(e) {
-    var divs = e.target.childNodes
-    divs.map((div,i)=>{
-    console.log(div)
-    })
+    var divs = e.target.childNodes;
+    divs.map((div, i) => {
+      console.log("aqui", div);
+    });
   }
   return (
     <div className="jogo">
@@ -74,7 +72,7 @@ export default function Jogo(props) {
         Embaralhar e Começar
       </button>
       <Cards
-        onChange={e => {
+        onchange={(e) => {
           checagemDaVitoria(e);
         }}
         start={start}

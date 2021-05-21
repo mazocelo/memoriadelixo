@@ -39,21 +39,17 @@ class Cards extends Component {
                 image.classList.add("point");
                 this.setState({ count: 0 });
               } else {
-                setTimeout(
-                  () => {
-                    this.state.lastElement.classList.add("diVirada");
-                    this.state.lastImage.classList.add("viradas");
-                    this.state.lastImage.classList.remove("block");
-                    image.classList.add("viradas");
-                    image.classList.remove("block");
-                    div.classList.add("diVirada");
-
-                    console.log(this.state.count);
-                    this.setState({ count: 0 });
-                  },
-
-                  1200
-                );
+                setTimeout(() => {
+                  this.state.lastElement.classList.add("diVirada");
+                  this.state.lastImage.classList.add("viradas");
+                  this.state.lastImage.classList.remove("block");
+                  image.classList.add("viradas");
+                  image.classList.remove("block");
+                  div.classList.add("diVirada");
+                 // console.log(this.state.count);
+                  this.setState({ count: 0 });
+                }, 1200);
+                //this.setState({ count: 0 });
               }
             } else {
               this.setState({ lastElement: div });
