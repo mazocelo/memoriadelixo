@@ -50,13 +50,6 @@ export default function Jogo(props) {
 
   return (
     <div className="jogo">
-      <button
-        onClick={e => {
-          randomImg(e);
-        }}
-      >
-        embaralhar
-      </button>
       <Cards img={array} />
     </div>
   );
