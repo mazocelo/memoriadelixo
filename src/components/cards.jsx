@@ -10,15 +10,17 @@ var revealed = false;
 var revealed2 = false;
 const cardsN = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
 
+const initialState = {
+  count: 0,
+  point: "",
+  lastElement: [],
+  lastImage: []
+};
+
 class Cards extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      count: 0,
-      point: "",
-      lastElement: [],
-      lastImage: []
-    };
+    this.state = initialState;
   }
   reveal(e) {
     let image = e.target.childNodes[0];
@@ -39,15 +41,21 @@ class Cards extends Component {
               image.classList.add("point");
               this.setState({ count: 0 });
             } else {
-              /*
-            lastElement.classList.add('diVirada')
-            lastImage.classList.add("viradas");
-            lastImage.classList.remove("block");
-            image.classList.add("viradas");
-            image.classList.remove("block");
-            div.classList.add("diVirada");
-               setCount(0);
-            */
+              setTimeout(
+                () => {
+                  this.state.lastElement.classList.add("diVirada");
+                  this.state.lastImage.classList.add("viradas");
+                  this.state.lastImage.classList.remove("block");
+                  image.classList.add("viradas");
+                  image.classList.remove("block");
+                  div.classList.add("diVirada");
+                  //initialState
+                  console.log(this.state.count);
+                  this.setState({ count: 0 });
+                },
+
+                1200
+              );
             }
           } else {
             this.setState({ lastElement: div });

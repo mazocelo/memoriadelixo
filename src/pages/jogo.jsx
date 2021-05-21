@@ -43,10 +43,11 @@ export default function Jogo(props) {
       arrayPassageiro.splice(randomN, 1);
       setArray(copyState);
     }
-    e.target.classList.add('none')
+    e.target.classList.add("none");
     setArray(copyState);
     return;
   }
+
   return (
     <div className="jogo">
       <button
