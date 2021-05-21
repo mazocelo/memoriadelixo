@@ -76,12 +76,14 @@ class Cards extends Component {
   }
   
    checagemDaVitoria(e) {
-    var divs = e.target.childNodes;
-   
-    [...divs].map((div, i) => {
+    console.log(e.target.childNodes)
+     /*   var divs = e.target.childNodes;
+  
+    [...divs].forEach((div, i) => {
       console.log("aqui", div);
     });
-     console.log(divs)
+     console.log(e)
+  */
   }
   
   
