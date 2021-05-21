@@ -3,13 +3,30 @@ import React, { Component } from "react";
 
 class Tempo extends Component {
   constructor(props){
-    super()
-    this.state = {tempo: new Date.now()}
+    super(props)
+    this.state = {tempo: new Date()}
   }
+  
+  componentDidMount() {
+    setInterval(
+      () => this.tick(),
+      1000
+    );
+  }
+
+  componentWillUnmount() {
+  }
+  
+  tick() {
+    this.setState({
+      tempo: new Date()
+    });
+  }
+  
   render() {
     return (
       <div className="tempo">
-        <h2 className="tempo-h">{this.state.tempo}</h2>
+        <h2 className="tempo-h">{this.state.tempo.toLocaleTimeString()}</h2>
       </div>
     );
   }
