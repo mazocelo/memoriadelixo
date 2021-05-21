@@ -3,12 +3,12 @@ import React, { Component } from "react";
 class Tempo extends Component {
   constructor(props) {
     super(props);
-    this.state = { começo: 0, agora: 0, start: false };
+    this.state = { começo: 0, agora: 0, start: this.props.start };
   }
 
   componentDidMount() {
     //this.timerID=
-   
+    
     setInterval(() => this.tick(), 1000);
     
   }
@@ -18,7 +18,13 @@ class Tempo extends Component {
   }
   */
 
+  
+  
+  
   tick() {
+   if(this.state.start){ 
+     this.setState({começo: new Date()})
+     }
     var novoAgora = this.state.começo - new Date();
     novoAgora = Math.round(novoAgora * 0.001);
     this.setState({
