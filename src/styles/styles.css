@@ -130,14 +130,10 @@ body {
   background-size:contain; /*cover;*/
 }
 
-
-@media screen and (max-width: 599px) {
-
+@media screen and (max-width: 500px) {
   .vitoria-caixa {
     flex-direction: column;
-    height:200px
+    height: 200px;
+    left: 20px;
   }
-
-
-
 }

@@ -2,6 +2,9 @@ import React, { Component } from "react";
 
 import "../styles/styles.css";
 
+import ranking from './ranking.jsx'
+
+
 const CardLogo =
   "https://cdn.glitch.com/ee2b2e5b-f1c2-458e-83cd-dbede40e5fec%2Flatadelixo.png?v=1621015281528";
 
@@ -94,13 +97,17 @@ class Cards extends Component {
     this.victory()
   }
 */
+ 
   victory() {
     var inputs = document.ocument.querySelector("#vitoria");
     inputs.style.opacity = 1;
     inputs.focus();
   }
 
-  sendScore(e) {}
+  sendScore(e) {
+    
+    
+  }
 
   render() {
     let input;
