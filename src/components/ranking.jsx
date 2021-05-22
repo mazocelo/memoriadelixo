@@ -5,28 +5,39 @@ import api from "../services/api";
 class ranking extends Component {
   constructor(props) {
     super(props);
-    this.state = {rank:[]};
+    this.state = { rank: [], loaded: false };
   }
 
-  
-  componentDidMount (){
+  componentDidMount() {
     api
       .get("/ranking")
-      .then((resp) => {
-      console.log(resp.data,this.state)
-        const rank = resp.data
-        this.setState({rank} );
+      .then(resp => {
+        const rank = resp.data;
+
+        this.setState({ rank: rank, loaded:true });
+        console.log(rank, this.state.rank);
       })
-      .catch((err) => {
+      .catch(err => {
         console.log(err);
       });
   }
   render() {
     
-    return <div id='rankDiv' className='rank-div'>
-      {this.state.rank.map((ranker,i)=>{<li key={i}>ranker</li>})}    
-    </div>
-}
+    let rank;
+    if(this.state.loaded){
+      rank =this.state.rank.map((ranker, i) => {
+          return <li id={i}>{ranker}</li>;
+        })  
+    }
+    else{
+      rank = <h2>carregando...</h2>
+      }    
+    return (
+      <div id="rankDiv" className="rank-div">
+        {rank}    
+      </div>
+    );
+  }
 }
 
 export default ranking;
