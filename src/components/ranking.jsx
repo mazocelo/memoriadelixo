@@ -14,7 +14,7 @@ class ranking extends Component {
       .get("/ranking")
       .then((resp) => {
       console.log(resp.data,this.state)
-        let rank = resp.data
+        const rank = resp.data
         this.setState({rank} );
       })
       .catch((err) => {
