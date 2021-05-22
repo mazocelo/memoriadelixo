@@ -1,9 +1,9 @@
 import React, {Component} from 'react'
-import MongoClient from 'mongodb'
+//import MongoClient from 'mongodb'
 
 
-/*
-const MongoClient = require('mongodb').MongoClient;
+
+import MongoClient from ('mongodb').MongoClient;
 const uri = "mongodb+srv://adm:<password>@myind.vcufe.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
 const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
 client.connect(err => {
@@ -11,7 +11,6 @@ client.connect(err => {
   // perform actions on the collection object
   client.close();
 });
-*/
 
 
 class ranking extends Component{
