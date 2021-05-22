@@ -1,11 +1,15 @@
 import React, {Component} from 'react'
-//import MongoClient from 'mongodb'
 
-
-
+import api from '../services/api'
 
 class ranking extends Component{
 
+  componentWillUnmount(){
+  
+  }
+  componentWillMount(){
+
+  }  
   render(){
     return
   }

@@ -13,5 +13,8 @@ import useHashLocation from "./hooks/wouter-hash";
 import Jogo from "./pages/jogo.jsx";
 
 export default function Home() {
-  return <Route path="" component={Jogo}></Route>;
+  return <Router>
+    <Route path="" component={Jogo}></Route>;
+    <Route path="" component={Jogo}></Route>;
+  </Router>;
 }
