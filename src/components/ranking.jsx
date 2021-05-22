@@ -13,8 +13,7 @@ class ranking extends Component {
       .get("/ranking")
       .then(resp => {
         const rank = resp.data;
-
-        this.setState({ rank: rank, loaded:true });
+        this.setState({ rank: rank, loaded: true });
         console.log(rank, this.state.rank);
       })
       .catch(err => {
@@ -22,19 +21,23 @@ class ranking extends Component {
       });
   }
   render() {
-    
     let rank;
-    if(this.state.loaded){
-      rank =this.state.rank.map((ranker, i) => {
-          return <li id={i}>{ranker}</li>;
-        })  
+    if (this.state.loaded) {
+      rank = this.state.rank.map((ranker, i) => {
+        return (
+          <div>
+            <h2 key={i}>
+              {ranker.nickname} {ranker.tempo}
+            </h2>
+          </div>
+        );
+      });
+    } else {
+      rank = <h2>carregando...</h2>;
     }
-    else{
-      rank = <h2>carregando...</h2>
-      }    
     return (
       <div id="rankDiv" className="rank-div">
-        {rank}    
+        {rank}
       </div>
     );
   }

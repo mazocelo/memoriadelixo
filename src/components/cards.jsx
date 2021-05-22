@@ -2,7 +2,7 @@ import React, { Component } from "react";
 
 import "../styles/styles.css";
 
-import ranking from "./ranking.jsx";
+import Ranking from "./ranking.jsx";
 
 import api from "../services/api";
 
@@ -130,6 +130,7 @@ class Cards extends Component {
 
     if (this.state.win) {
       input = (
+        
         <div id="vitoria" className="vitoria-caixa">
           <h4 className="vitoria-label">Seu tempo foi {this.state.winText}</h4>
           <input
@@ -148,6 +149,7 @@ class Cards extends Component {
           >
             Fora Bolsonaro!
           </button>
+          
         </div>
       );
     } else {
