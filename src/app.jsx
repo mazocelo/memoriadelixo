@@ -16,7 +16,7 @@ import Ranking from './components/ranking.jsx'
 
 export default function Home() {
   return <Router>
-    <Route path="" component={Jogo}></Route>;
-    <Route path="/rank" component={Ranking}></Route>;
+    <Route path="" component={Jogo}></Route>
+    <Route path="/rank" component={Ranking}></Route>
   </Router>;
 }
