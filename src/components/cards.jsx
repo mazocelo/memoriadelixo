@@ -4,13 +4,7 @@ import "../styles/styles.css";
 
 import ranking from './ranking.jsx'
 
-import api from "./api"
-
-
-const api = axios.create({
-  baseURL: "https://maiiapi.glitch.me/ranking",
-});
-
+import api from "../services/api"
 
 
 const CardLogo =
@@ -113,7 +107,7 @@ class Cards extends Component {
   }
 
   sendScore(e) {
-    
+    api.post('/ranking',)
     
   }
 
