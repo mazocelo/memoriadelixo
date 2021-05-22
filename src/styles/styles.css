@@ -53,7 +53,7 @@ body {
   color: red;
 }
 
-.vitoria {
+.vitoria-caixa {
   height: 100%;
   width: 100%;
   background-color: white;
@@ -101,7 +101,7 @@ body {
   }
 }
 
-.vitoria {
+.vitoria-caixa {
   text-align: center;
   height: 20%;
   width: 90%;
@@ -128,4 +128,16 @@ body {
    
  background: url("https://cdn.glitch.com/ee2b2e5b-f1c2-458e-83cd-dbede40e5fec%2Flixo%20monstro.jpg?v=1621100289278") no-repeat center fixed;     
   background-size:contain; /*cover;*/
+}
+
+
+@media screen and (max-width: 599px) {
+
+  .vitoria-caixa {
+    flex-direction: column;
+    height:200px
+  }
+
+
+
 }

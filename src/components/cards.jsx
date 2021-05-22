@@ -105,12 +105,12 @@ class Cards extends Component {
   render() {
     let input;
 
-    if (this.state.win) {
+    if (!this.state.win) {
       input = (
-        <div id="vitoria" className="vitoria">
-          <label className="vitoria-label">
+        <div id="vitoria" className="vitoria-caixa">
+          <h4 className="vitoria-label">
             Seu tempo foi {this.state.winText}
-          </label>
+          </h4>
           <input
             className="vitoria-input"
             type="text"
