@@ -2,10 +2,9 @@ import React, { Component } from "react";
 
 import "../styles/styles.css";
 
-import ranking from './ranking.jsx'
+import ranking from "./ranking.jsx";
 
-import api from "../services/api"
-
+import api from "../services/api";
 
 const CardLogo =
   "https://cdn.glitch.com/ee2b2e5b-f1c2-458e-83cd-dbede40e5fec%2Flatadelixo.png?v=1621015281528";
@@ -13,6 +12,7 @@ const CardLogo =
 const cardsN = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
 
 const initialState = {
+  nickname: "",
   count: 0,
   point: "",
   lastElement: [],
@@ -99,7 +99,7 @@ class Cards extends Component {
     this.victory()
   }
 */
- 
+
   victory() {
     var inputs = document.ocument.querySelector("#vitoria");
     inputs.style.opacity = 1;
@@ -107,23 +107,38 @@ class Cards extends Component {
   }
 
   sendScore(e) {
-    api.post('/ranking',)
-    
+    api
+      .post("/ranking", {
+        nickname: this.state.nickname,
+        tempo: this.state.winText
+      })
+      .then(response => {
+        console.log(response);
+      })
+      .catch(err => {
+        console.log(err);
+      });
   }
 
+  saveNickName(e) {
+    var nickname = e.target.value;
+    this.setState({ nickname });
+    console.log(this.state.nickname);
+  }
   render() {
     let input;
 
-    if (this.state.win) {
+    if (!this.state.win) {
       input = (
         <div id="vitoria" className="vitoria-caixa">
-          <h4 className="vitoria-label">
-            Seu tempo foi {this.state.winText}
-          </h4>
+          <h4 className="vitoria-label">Seu tempo foi {this.state.winText}</h4>
           <input
             className="vitoria-input"
             type="text"
             placeholder="digite seu nick"
+            onChange={e => {
+              this.saveNickName(e);
+            }}
           />
           <button
             className="mal-feito"
