@@ -19,7 +19,8 @@ const initialState = {
   lastImage: [],
   pontos: 0,
   win: false,
-  winText: 0
+  winText: 0,
+  loading: false
 };
 
 class Cards extends Component {
@@ -107,12 +108,15 @@ class Cards extends Component {
   }
 
   sendScore(e) {
+    
     api
       .post("/ranking", {
         nickname: this.state.nickname,
         tempo: this.state.winText
-      })
+        setState({loading:true})
+    })
       .then(response => {
+        window.location.reload();
         console.log(response);
       })
       .catch(err => {
@@ -127,10 +131,29 @@ class Cards extends Component {
   }
   render() {
     let input;
+    let botao;
+    if (this.state.loading) {
+      bota =  <button
+          className="mal-feito"
+        >
+          Enviando...
+        </button>
+      
+    } else {
+      botao = (
+        <button
+          className="mal-feito"
+          onClick={e => {
+            this.sendScore(e);
+          }}
+        >
+          Fora Bolsonaro!
+        </button>
+      );
+    }
 
-    if (this.state.win) {
+    if (!this.state.win) {
       input = (
-        
         <div id="vitoria" className="vitoria-caixa">
           <h4 className="vitoria-label">Seu tempo foi {this.state.winText}</h4>
           <input
@@ -141,15 +164,7 @@ class Cards extends Component {
               this.saveNickName(e);
             }}
           />
-          <button
-            className="mal-feito"
-            onClick={e => {
-              this.sendScore(e);
-            }}
-          >
-            Fora Bolsonaro!
-          </button>
-          
+          {botao}
         </div>
       );
     } else {
@@ -180,6 +195,7 @@ class Cards extends Component {
           })}
         </div>
         {input}
+        <Ranking />
       </div>
     );
   }

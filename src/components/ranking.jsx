@@ -37,6 +37,7 @@ class ranking extends Component {
     }
     return (
       <div id="rankDiv" className="rank-div">
+        <h1 className='rank-title'> RANKING FORA BOZO!</h1>
         {rank}
       </div>
     );
