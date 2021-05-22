@@ -108,12 +108,12 @@ class Cards extends Component {
   }
 
   sendScore(e) {
-    
+    this.setState({loading:true})
     api
       .post("/ranking", {
         nickname: this.state.nickname,
         tempo: this.state.winText
-        setState({loading:true})
+      
     })
       .then(response => {
         window.location.reload();
@@ -133,7 +133,7 @@ class Cards extends Component {
     let input;
     let botao;
     if (this.state.loading) {
-      bota =  <button
+      botao =  <button
           className="mal-feito"
         >
           Enviando...
