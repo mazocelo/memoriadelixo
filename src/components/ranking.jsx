@@ -1,18 +1,30 @@
-import React, {Component} from 'react'
+import React, { Component } from "react";
 
-import api from '../services/api'
+import api from "../services/api";
 
-class ranking extends Component{
+class ranking extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {rank:[]};
+  }
 
-  componentWillUnmount(){
   
+  componentWillMount() {
+    api
+      .get("/ranking")
+      .then(resp => {
+      console.log(resp.data,this.state)
+        this.setState({ rank:resp.data });
+      })
+      .catch(err => {
+        console.log(err);
+      });
   }
-  componentWillMount(){
-
-  }  
-  render(){
-    return
-  }
+  render() {
+    return <Div>
+      {this.state.rank}    
+    </Div>
+}
 }
 
-export default ranking
+export default ranking;
