@@ -25,7 +25,7 @@ class ranking extends Component {
     if (this.state.loaded) {
       rank = this.state.rank.map((ranker, i) => {
         return (
-          <div>
+          <div key={'d'+i}>
             <h2 key={i}>
               {ranker.nickname} {ranker.tempo}
             </h2>
