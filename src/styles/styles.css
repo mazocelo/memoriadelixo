@@ -1,5 +1,6 @@
 body {
   font-family: "Zen Dots", cursive;
+  background-color:black;
 }
 .imgs {
   position: relative;
@@ -13,6 +14,7 @@ body {
   display: none;
 }
 .card {
+ 
   padding: auto;
   margin: auto;
   size: 100%;
@@ -44,6 +46,7 @@ body {
   background: url("https://cdn.glitch.com/ee2b2e5b-f1c2-458e-83cd-dbede40e5fec%2Flixo%20monstro.jpg?v=1621100289278")
     no-repeat center;
   background-size: contain;
+  background-color:white;
 }
 .none {
   display: none;
@@ -92,11 +95,22 @@ body {
 
 .classification {
   display: flex;
+  margin:auto;
+  padding:auto;
+
+  text-align:righ;
 }
 
 .classificado {
-}
+  
+  margin:auto;
+  padding:10px;
 
+}
+.rank-div{
+  color:#c1eeff;
+  text-align:center;
+}
 @media screen and (max-width: 600px) {
   .card {
     width: 140px;
