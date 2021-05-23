@@ -20,7 +20,7 @@ const initialState = {
   pontos: 0,
   win: false,
   winText: 0,
-  loading: false
+  sending: false
 };
 
 class Cards extends Component {
@@ -108,7 +108,7 @@ class Cards extends Component {
   }
 
   sendScore(e) {
-    this.setState({ loading: true });
+    this.setState({ sending: true });
     api
       .post("/ranking", {
         nickname: this.state.nickname,
@@ -126,12 +126,12 @@ class Cards extends Component {
   saveNickName(e) {
     var nickname = e.target.value;
     this.setState({ nickname });
-    console.log(this.state.nickname);
+   // console.log(this.state.nickname);
   }
   render() {
     let input;
     let botao;
-    if (this.state.loading) {
+    if (this.state.sending) {
       botao = <button className="mal-feito">Enviando...</button>;
     } else {
       botao = (

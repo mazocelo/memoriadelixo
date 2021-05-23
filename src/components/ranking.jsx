@@ -13,6 +13,7 @@ class ranking extends Component {
       .get("/ranking")
       .then(resp => {
         const rank = resp.data;
+        
         this.setState({ rank: rank, loaded: true });
         console.log(rank, this.state.rank);
       })
