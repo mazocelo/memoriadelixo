@@ -189,7 +189,7 @@ class Cards extends Component {
                   onClick={e => {
                     this.unreveal(e);
                   }}
-                  onHold={e => {
+                  onHover={e => {
                     this.imgZoom(e);
                   }}
                   src={this.props.img[i]}

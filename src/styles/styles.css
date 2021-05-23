@@ -68,10 +68,10 @@ body {
 }
 .embaralhar-btn{
   color:#0cce6b;
-   font-family: "Zen Dots", cursive;
+  font-family: "Zen Dots", cursive;
   font-size:2em;
-  padding:30px;
-  margin:30px;
+  padding:100px;
+  margin:100px;
   background-color:white;
 }
 .vitoria-caixa {
@@ -131,7 +131,7 @@ body {
 }
 
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 800px) {
   .card {
     width: 140px;
     height: 170px;
@@ -165,10 +165,7 @@ body {
   opacity: 1;
 }
 .diVirada {
-  /*
-   
- background: url("https://cdn.glitch.com/ee2b2e5b-f1c2-458e-83cd-dbede40e5fec%2Flixo%20monstro.jpg?v=1621100289278") no-repeat center fixed;     
-  background-size:contain; /*cover;*/
+ 
 }
   .embaralhar-btn{
  
