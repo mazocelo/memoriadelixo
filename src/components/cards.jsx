@@ -109,10 +109,10 @@ class Cards extends Component {
 
   sendScore(e) {
     this.setState({ sending: true });
-    var nickname = this.state.nickname
-    var tempo = this.state.winText
-    tempo = tempo.substring(0, tempo.length - 1)
-    tempo = parseInt(tempo,10);
+    var nickname = this.state.nickname;
+    var tempo = this.state.winText;
+    tempo = tempo.substring(0, tempo.length - 1);
+    tempo = parseInt(tempo, 10);
     api
       .post("/ranking", {
         nickname,
@@ -126,11 +126,14 @@ class Cards extends Component {
         console.log(err);
       });
   }
+  imgZoom(e) {
+    console.log(e.target, window.innerWidth)
+  }
 
   saveNickName(e) {
     var nickname = e.target.value;
     this.setState({ nickname });
-   // console.log(this.state.nickname);
+    // console.log(this.state.nickname);
   }
   render() {
     let input;
@@ -185,6 +188,9 @@ class Cards extends Component {
                   className="viradas imgs"
                   onClick={e => {
                     this.unreveal(e);
+                  }}
+                  onHold={e => {
+                    this.imgZoom(e);
                   }}
                   src={this.props.img[i]}
                 ></img>
