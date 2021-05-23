@@ -59,6 +59,7 @@ export default function Jogo(props) {
     <div className="jogo">
       <Tempo start={start} begin={begin} />
       <button
+        className="embaralhar-btn"
         onClick={e => {
           randomImg(e);
         }}
