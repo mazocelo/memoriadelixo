@@ -32,6 +32,8 @@ body {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  padding:20px;
+  margin: 20px;
 }
 .jogo {
 }
@@ -39,8 +41,10 @@ body {
   display: none;
 }
 .div-point {
-  transition: 1000ms;
-  border: 8px solid green;
+  transition: 800ms;
+  border: 5px solid green;
+  
+  background-color:white;
 }
 .diVirada {
   background: url("https://cdn.glitch.com/ee2b2e5b-f1c2-458e-83cd-dbede40e5fec%2Flixo%20monstro.jpg?v=1621100289278")
@@ -95,16 +99,14 @@ body {
 
 .classification {
   display: flex;
-  margin:auto;
-  padding:auto;
-
-  text-align:righ;
+    text-align:right;
 }
 
 .classificado {
-  
-  margin:auto;
-  padding:10px;
+padding:20px;
+margin: 20px;
+  padding-bottom:0px;
+margin-bottom:0px;
 
 }
 .rank-div{
