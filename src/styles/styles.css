@@ -16,9 +16,6 @@ body {
 .card {
   background-color: white;
   padding: auto;
-  margin: auto;
-  size: 100%;
-  padding: auto;
   margin: 5px;
   width: 330px;
   height: 360px;
@@ -34,8 +31,8 @@ body {
   flex-wrap: wrap;
   padding-left: 30px;
   margin-left: 30px;
-  margin-bottom:0px;
-  padding-bottom:0px;
+  margin-bottom: 0px;
+  padding-bottom: 0px;
 }
 .jogo {
 }
@@ -57,22 +54,21 @@ body {
 .none {
   display: none;
 }
-.tempo{
-  padding:30px 0px 0px 120px;
-  margin:30px 0px 0px 120px;
+.tempo {
+  padding: 30px 0px 0px 120px;
+  margin: 30px 0px 0px 120px;
 }
 .tempo-h {
-  
-  font-size:2em;
+  font-size: 2em;
   color: red;
 }
-.embaralhar-btn{
-  color:#0cce6b;
+.embaralhar-btn {
+  color: #0cce6b;
   font-family: "Zen Dots", cursive;
-  font-size:2em;
-  padding:100px;
-  margin:100px;
-  background-color:white;
+  font-size: 2em;
+  padding: 100px;
+  margin: 100px;
+  background-color: white;
 }
 .vitoria-caixa {
   height: 100%;
@@ -113,8 +109,8 @@ body {
 
 .classification {
   display: flex;
-  margin:auto;
-  padding:auto;
+  margin: auto;
+  padding: auto;
 }
 
 .classificado {
@@ -125,11 +121,10 @@ body {
 }
 .rank-div {
   color: #c1eeff;
- }
-.rank-title{
- text-align:center;
 }
-
+.rank-title {
+  text-align: center;
+}
 
 @media screen and (max-width: 800px) {
   .card {
@@ -140,39 +135,40 @@ body {
     width: 85%;
     height: 85%;
   }
-}
 
-.vitoria-caixa {
-  text-align: center;
-  height: 20%;
-  width: 90%;
-  border-radius: 10%;
-  position: absolute;
-  display: flex;
-  top: 20%;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  font-size: 2em;
-  opacity: 1;
+  .vitoria-caixa {
+    text-align: center;
+    height: 20%;
+    width: 90%;
+    border-radius: 10%;
+    position: absolute;
+    display: flex;
+    top: 20%;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    font-size: 2em;
+    opacity: 1;
+  }
+  .vitoria-input {
+  }
+  .vitoria-label {
+    margin: 10px;
+  }
+  #vitoria {
+    opacity: 1;
+  }
+  .diVirada {
+  }
+  .embaralhar-btn {
+    padding: 20px;
+    margin: 20px;
+  }
+  
+  .painel {
+  padding-left:10px;
+  }
 }
-.vitoria-input {
-}
-.vitoria-label {
-  margin: 10px;
-}
-#vitoria {
-  opacity: 1;
-}
-.diVirada {
- 
-}
-  .embaralhar-btn{
- 
-  padding:30px;
-  margin:30px;
-}
-
 @media screen and (max-width: 500px) {
   .vitoria-caixa {
     flex-direction: column;
@@ -183,14 +179,21 @@ body {
     width: 120px;
     height: 150px;
   }
-  
-.tempo{
-  padding:30px 0px 0px 90px;
-  margin:30px 0px 0px 90px;
-}
-  .embaralhar-btn{
- 
-  padding:30px;
-  margin:30px;
-}
+
+  .tempo {
+    padding: 30px 0px 0px 70px;
+    margin: 30px 0px 0px 70px;
+  }
+  .embaralhar-btn {
+    padding: 30px;
+    margin: 30px;
+  }
+   .painel {
+  padding-left:20px;
+  margin-left:20px;
+  }
+  .tempo{
+  padding-left:20px;
+  margin-left:20px;
+ }
 }
