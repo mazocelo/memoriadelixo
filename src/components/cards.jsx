@@ -127,7 +127,7 @@ class Cards extends Component {
       });
   }
   imgZoom(e) {
-    console.log(e.target, window.innerWidth)
+    console.log(e.target, window.innerWidth);
   }
 
   saveNickName(e) {
@@ -189,9 +189,13 @@ class Cards extends Component {
                   onClick={e => {
                     this.unreveal(e);
                   }}
-                  onHover={e => {
+                  onMouseOver={e => {
                     this.imgZoom(e);
                   }}
+                  onDrag={e => {
+                    this.imgZoom(e);
+                  }}
+                  onMouseLeave={e => {}}
                   src={this.props.img[i]}
                 ></img>
               </div>
