@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-
 import api from "../services/api";
 
 class ranking extends Component {
@@ -7,13 +6,11 @@ class ranking extends Component {
     super(props);
     this.state = { rank: [], loaded: false };
   }
-
   componentDidMount() {
     api
       .get("/ranking")
       .then(resp => {
         const rank = resp.data;
-        
         this.setState({ rank: rank, loaded: true });
         console.log(rank, this.state.rank);
       })
@@ -26,9 +23,9 @@ class ranking extends Component {
     if (this.state.loaded) {
       rank = this.state.rank.map((ranker, i) => {
         return (
-          <div key={'d'+i}>
-            <h2 key={i}>
-              {ranker.nickname} {ranker.tempo}
+          <div className='classification' key={"d" + i}>
+            <h2 className='classificado' key={i}>
+              <h3>{i+1}º </h3> {ranker.nickname} {ranker.tempo}s
             </h2>
           </div>
         );
@@ -38,7 +35,7 @@ class ranking extends Component {
     }
     return (
       <div id="rankDiv" className="rank-div">
-        <h1 className='rank-title'> RANKING FORA BOZO!</h1>
+        <h1 className="rank-title"> RANKING FORA BOZO!</h1>
         {rank}
       </div>
     );

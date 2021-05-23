@@ -109,10 +109,14 @@ class Cards extends Component {
 
   sendScore(e) {
     this.setState({ sending: true });
+    var nickname = this.state.nickname
+    var tempo = this.state.winText
+    tempo = tempo.substring(0, tempo.length - 1)
+    tempo = parseInt(tempo,10);
     api
       .post("/ranking", {
-        nickname: this.state.nickname,
-        tempo: this.state.winText
+        nickname,
+        tempo
       })
       .then(response => {
         window.location.reload();
