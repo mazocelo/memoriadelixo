@@ -57,16 +57,21 @@ body {
 .none {
   display: none;
 }
-
+.tempo{
+  padding:30px 0px 0px 120px;
+  margin:30px 0px 0px 120px;
+}
 .tempo-h {
+  
+  font-size:2em;
   color: red;
 }
 .embaralhar-btn{
   color:#0cce6b;
    font-family: "Zen Dots", cursive;
   font-size:2em;
-  padding:auto;
-  margin:auto;
+  padding:30px;
+  margin:30px;
   background-color:white;
 }
 .vitoria-caixa {
@@ -120,8 +125,13 @@ body {
 }
 .rank-div {
   color: #c1eeff;
+ }
+.rank-title{
+ text-align:center;
 }
-@media screen and (max-width: 600px) {
+
+
+@media screen and (max-width: 900px) {
   .card {
     width: 140px;
     height: 170px;
@@ -160,6 +170,11 @@ body {
  background: url("https://cdn.glitch.com/ee2b2e5b-f1c2-458e-83cd-dbede40e5fec%2Flixo%20monstro.jpg?v=1621100289278") no-repeat center fixed;     
   background-size:contain; /*cover;*/
 }
+  .embaralhar-btn{
+ 
+  padding:30px;
+  margin:30px;
+}
 
 @media screen and (max-width: 500px) {
   .vitoria-caixa {
@@ -171,4 +186,14 @@ body {
     width: 120px;
     height: 150px;
   }
+  
+.tempo{
+  padding:30px 0px 0px 90px;
+  margin:30px 0px 0px 90px;
+}
+  .embaralhar-btn{
+ 
+  padding:30px;
+  margin:30px;
+}
 }
