@@ -25,7 +25,7 @@ class ranking extends Component {
         return (
           <div className='classification' key={"d" + i}>
             <h2 className='classificado' key={i}>
-              <h3>{i+1}º </h3> {ranker.nickname} {ranker.tempo}s
+              {i+1}º  {ranker.nickname} {ranker.tempo}s
             </h2>
           </div>
         );

@@ -90,23 +90,12 @@ body {
   opacity: 1;
 }
 
-
-.classification{
-
+.classification {
+  display: flex;
 }
 
-
-.classificado{
-
+.classificado {
 }
-
-
-
-
-
-
-
-
 
 @media screen and (max-width: 600px) {
   .card {
