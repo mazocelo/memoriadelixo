@@ -19,7 +19,7 @@ const initialState = {
   lastImage: [],
   pontos: 0,
   win: false,
-  winText: 0,
+  winTime: 0,
   sending: false
 };
 
@@ -53,7 +53,7 @@ class Cards extends Component {
                   var painel = document.querySelector(".painel");
                   painel.style.opacity = 0.5;
                   var tempo = document.querySelector(".tempo-h");
-                  this.setState({ win: true, winText: tempo.outerText });
+                  this.setState({ win: true, winTime: tempo.outerText });
                   this.victory();
                 }
               } else {
@@ -110,7 +110,7 @@ class Cards extends Component {
   sendScore(e) {
     this.setState({ sending: true });
     var nickname = this.state.nickname;
-    var tempo = this.state.winText;
+    var tempo = this.state.winTime;
     tempo = tempo.substring(0, tempo.length - 1);
     tempo = parseInt(tempo, 10);
     api
@@ -156,7 +156,7 @@ class Cards extends Component {
     if (this.state.win) {
       input = (
         <div id="vitoria" className="vitoria-caixa">
-          <h4 className="vitoria-label">Seu tempo foi {this.state.winText}</h4>
+          <h4 className="vitoria-label">Seu tempo foi {this.state.winTime}</h4>
           <input
             className="vitoria-input"
             type="text"
